@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">PiRoverApp</string>
+    <string name="app_title">PiRover</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -14,4 +15,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="exit">Exit</string>
+    <string name="login">Login</string>
+    <string name="register">Register Here</string>
+    <string name="back">Back</string>
+    <string name="auto">Automatic</string>
+    <string name="manual">Manual</string>
+
+
 </resources>
