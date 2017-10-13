@@ -3,7 +3,8 @@ package com.example.chris.piroverapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AutoActivity extends AppCompatActivity {
+public class
+AutoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
