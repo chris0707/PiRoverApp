@@ -13,7 +13,7 @@
         android:layout_marginTop="49dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="EnterFirst&LastName"
+        android:text="EnterFirstLastName"
         app:layout_constraintLeft_toLeftOf="@+id/editUser"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"
