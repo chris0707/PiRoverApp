@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -14,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -37,11 +39,23 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password = editPass.getText().toString();
                 final String content = "";
 
+                if(name.isEmpty() || username.isEmpty() || password.isEmpty()){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    builder.setMessage("Register Failed.")
+                            .setNegativeButton("Retry", null)
+                            .create()
+                            .show();
+
+
+                }
+                else{
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
+
                             boolean success = jsonObject.getBoolean("success");
 
                             if(success){
@@ -49,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 startActivity(intent); //modify if not working
 
                             } else{
+
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                 builder.setMessage("Register Failed")
                                         .setNegativeButton("Retry", null)
@@ -56,6 +71,11 @@ public class RegisterActivity extends AppCompatActivity {
                                         .show();
 
                             }
+                            //TextView text1 = (TextView)findViewById(R.id.textView6);
+                           // String name = jsonObject.getString("test");
+                            //text1.setText(name);
+
+
                         }catch (JSONException e){
                             e.printStackTrace();
 
@@ -64,10 +84,11 @@ public class RegisterActivity extends AppCompatActivity {
                 };
                 RegisterRequest registerRequest = new RegisterRequest(name, username, password, content, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                queue.add(registerRequest);
+                queue.add(registerRequest);  }
 
             }
         });
+
 
 
     }

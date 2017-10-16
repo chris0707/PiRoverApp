@@ -2,7 +2,7 @@
     <string name="app_name">PiRoverApp</string>
     <string name="app_title">PiRover</string>
     <string name="title_activity_login">Sign in</string>
-
+    <string name="app_titleMenu">Options Control</string>
     <!-- Strings related to login -->
 
     <string name="exit">Exit</string>
@@ -18,5 +18,15 @@
 
     <string name="login_user">Username</string>
     <string name="login_password">Password</string>
+
+    <!-- Splash Names -->
+    <string name="splash_teamName">Pi NIVEA PRODUCTIONS</string>
+    <string name="splash_dev">DEVELOPERS: </string>
+    <string name="splash_chris">CHRISTOPHER ALBARILLO</string>
+    <string name="splash_law">LAWRENCE PUIG</string>
+    <string name="splash_iff">IFRAH HASSAN</string>
+
+    <string name="menu_welcome">WELCOME</string>
+    <string name="menu_serial">SERIAL#:</string>
 
 </resources>
