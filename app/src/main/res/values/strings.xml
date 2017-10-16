@@ -15,6 +15,11 @@
     <string name="register_name">Enter your full name</string>
     <string name="register_user">Enter your username</string>
     <string name="register_pass">Enter your password</string>
+    <string name="register_serial">Choose a port ID</string>
+
+    <string name="register_serialButton1">00001101-0000-1000-8000-00805f9b34fb</string>
+    <string name="register_serialButton2">00001101-0000-1000-8000-12345test</string>
+
 
     <string name="login_user">Username</string>
     <string name="login_password">Password</string>
@@ -27,6 +32,6 @@
     <string name="splash_iff">IFRAH HASSAN</string>
 
     <string name="menu_welcome">WELCOME</string>
-    <string name="menu_serial">SERIAL#:</string>
+    <string name="menu_serial">SERIAL ID:</string>
 
 </resources>
