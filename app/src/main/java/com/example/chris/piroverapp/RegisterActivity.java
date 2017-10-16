@@ -1,12 +1,15 @@
 package com.example.chris.piroverapp;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -19,6 +22,9 @@ import org.w3c.dom.Text;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    String content ="";
+    TextView text1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +35,8 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText editName = (EditText)findViewById(R.id.editName);
         final EditText editUser = (EditText)findViewById(R.id.editUser);
         final EditText editPass = (EditText)findViewById(R.id.editPassword);
-        final EditText editConfirmPass = (EditText)findViewById(R.id.editConfirmPassword);
+        text1 =(TextView)findViewById(R.id.textView6);
+
 
         registerB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +44,8 @@ public class RegisterActivity extends AppCompatActivity {
                 final String name = editName.getText().toString();
                 final String username = editUser.getText().toString();
                 final String password = editPass.getText().toString();
-                final String content = "";
-
-                if(name.isEmpty() || username.isEmpty() || password.isEmpty()){
+                final String content = text1.getText().toString();
+                if(name.isEmpty() || username.isEmpty() || password.isEmpty() ||content.isEmpty()){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                     builder.setMessage("Register Failed.")
                             .setNegativeButton("Retry", null)
@@ -89,7 +95,51 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+}
+
+    public void onRadioButtonClicked(View view){
+
+        boolean checked = ((RadioButton)view).isChecked();
+
+        switch (view.getId()){
+
+            case R.id.serialRadio1:
+                if(checked) {
+                    content = "00001101-0000-1000-8000-00805f9b34fb";
+                    text1.setText(content);
+                }else{
+
+                    content.isEmpty();
+
+                }
+                break;
+
+            case R.id.serialRadio2:
+                if(checked) {
+                    content = "00001101-0000-1000-8000-12345test";
+                    text1.setText(content);
+                }else{
+
+                    content.isEmpty();
+
+                }
+                break;
+
+
+
+
+
+        }
+
 
 
     }
+
+
+
+
+
+
+
+
 }
