@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chris.piroverapp.AutoActivity"
-    android:background="@drawable/honeybg1">
+    android:background="@drawable/background3">
 
     <TextView
         android:id="@+id/textView1"
@@ -30,16 +30,17 @@
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintBottom_creator="1"
         android:layout_marginStart="5dp"
+        android:background="@android:color/darker_gray"
+        android:text="ToggleButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
 
 
