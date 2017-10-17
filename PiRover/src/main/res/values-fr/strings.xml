@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">PiRoverApp</string>
+    <string name="app_title">PiRover</string>
+    <string name="title_activity_login">Se Connecter</string>
+    <string name="app_titleMenu">Contrôle des options</string>
+    <!-- Strings related to login -->
+
+    <string name="exit">Sortie</string>
+    <string name="login">S\'identifier</string>
+    <string name="register">Inscrivez-vous ici</string>
+    <string name="back">Arrière</string>
+    <string name="auto">Automatique</string>
+    <string name="manual">Manual</string>
+
+    <string name="register_name">Entrez votre nom complet</string>
+    <string name="register_user">Entrez votre nom d\'utilisateur</string>
+    <string name="register_pass">Tapez votre mot de passe</string>
+    <string name="register_serial">Choisissez un ID de port</string>
+
+    <string name="register_serialButton1">00001101-0000-1000-8000-00805f9b34fb</string>
+    <string name="register_serialButton2">00001101-0000-1000-8000-12345test</string>
+
+
+    <string name="login_user">Nom d\'utilisateur</string>
+    <string name="login_password">Mot de passe</string>
+    <string name="login_title">TestTitle</string>
+
+    <!-- Splash Names -->
+    <string name="splash_teamName">Pi NIVEA PRODUCTIONS</string>
+    <string name="splash_dev">DEVELOPERS: </string>
+    <string name="splash_chris">CHRISTOPHER ALBARILLO</string>
+    <string name="splash_law">LAWRENCE PUIG</string>
+    <string name="splash_iff">IFRAH HASSAN</string>
+
+    <string name="menu_welcome">BIENVENUE</string>
+    <string name="menu_serial">ID DE SERIE:</string>
+
+</resources>
