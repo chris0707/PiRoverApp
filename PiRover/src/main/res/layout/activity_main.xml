@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,40 +19,39 @@
         android:text="@string/app_titleMenu"
         android:textColor="@android:color/black"
         android:textSize="30sp"
+        app:layout_constraintRight_toLeftOf="@+id/coordinatorLayout"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/automaticbutt"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="12dp"
         android:layout_marginTop="90dp"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="92dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nameText" />
 
     <Button
         android:id="@+id/automaticbutt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintTop_creator="1"
         tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="67dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/manualconf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="74dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/automaticbutt"
+        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        android:layout_marginEnd="74dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/automaticbutt" />
 
     <TextView
         android:id="@+id/autoText"
@@ -75,8 +75,8 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:layout_marginStart="14dp"
         tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="14dp"
         app:layout_constraintTop_toBottomOf="@+id/manualconf"
         tools:layout_constraintLeft_creator="1"
@@ -95,19 +95,18 @@
         android:layout_marginTop="35dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="18dp"
         app:layout_constraintTop_toBottomOf="@+id/welcomText"
         tools:layout_constraintLeft_creator="1"
@@ -123,7 +122,7 @@
         android:textSize="20sp"
         tools:layout_constraintTop_creator="1"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@+id/titleserialText"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -136,11 +135,40 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:layout_marginStart="16dp"
         tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="179dp"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/coordinatorLayout"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/manualText">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:fabSize="normal"
+            android:src="@drawable/ic_action_name"
+            android:id="@+id/fab"/>
+
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </android.support.constraint.ConstraintLayout>
