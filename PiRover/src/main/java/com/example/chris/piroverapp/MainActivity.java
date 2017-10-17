@@ -1,6 +1,8 @@
 package com.example.chris.piroverapp;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView nameText;
     TextView contentText;
+
+    FloatingActionButton fab;
 
 
     @Override
@@ -33,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
         nameText.setText(name);
         contentText.setText(content);
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com")));
+            }
+        });
 
 
 
