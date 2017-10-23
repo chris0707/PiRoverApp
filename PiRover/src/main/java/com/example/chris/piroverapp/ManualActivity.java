@@ -1,25 +1,24 @@
 package com.example.chris.piroverapp;
 
 import android.content.Context;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ManualActivity extends AppCompatActivity {
 
-    Button forwardButton;
-    Button reverseButton;
-    Button leftButton;
-    Button rightButton;
+    ImageView forwardButton, reverseButton, leftButton, rightButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
 
-        forwardButton = (Button)findViewById(R.id.forwardButton);
+        forwardButton = (ImageView) findViewById(R.id.forwardButton);
         forwardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +30,7 @@ public class ManualActivity extends AppCompatActivity {
             }
         });
 
-        reverseButton = (Button)findViewById(R.id.reverseButton);
+        reverseButton = (ImageView) findViewById(R.id.reverseButton);
         reverseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +42,7 @@ public class ManualActivity extends AppCompatActivity {
             }
         });
 
-        leftButton = (Button)findViewById(R.id.leftButton);
+        leftButton = (ImageView)findViewById(R.id.leftButton);
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +54,7 @@ public class ManualActivity extends AppCompatActivity {
             }
         });
 
-        rightButton = (Button)findViewById(R.id.rightButton);
+        rightButton = (ImageView)findViewById(R.id.rightButton);
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
