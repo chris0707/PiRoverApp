@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="66dp"
+        android:layout_marginBottom="68dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
@@ -44,12 +44,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/login_user"
+        android:layout_marginEnd="4dp"
+        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/etPass"
-        android:layout_marginStart="14dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/imageView" />
+        app:layout_constraintRight_toRightOf="@+id/imageView"
+        android:layout_marginBottom="8dp" />
 
     <EditText
         android:id="@+id/etPass"
@@ -82,13 +82,18 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="310dp"
-        android:layout_height="196dp"
+        android:layout_width="224dp"
+        android:layout_height="192dp"
         app:srcCompat="@drawable/mainlogo"
+        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/etUser"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/etUser"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="82dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="82dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
