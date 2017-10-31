@@ -11,6 +11,17 @@
     <string name="back">Back</string>
     <string name="auto">Automatic</string>
     <string name="manual">Manual</string>
+    <string name="connect">Connect</string>
+    <string name="trying">Attempting Connection...</string>
+    <string name="notestablished">Attempt Failed</string>
+    <string name="connected">Connection Established</string>
+    <string name="bluetoothelse">Go to settings and enable Bluetooth</string>
+    <string name="disconnect">Disconnected</string>
+    <string name="stop">Stop</string>
+    <string name="closing">Closing connection...</string>
+    <string name="noconnection">No connection found</string>
+
+
 
     <string name="register_name">Enter your full name</string>
     <string name="register_user">Enter your username</string>
