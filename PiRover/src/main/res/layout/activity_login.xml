@@ -39,8 +39,8 @@
 
     <EditText
         android:id="@+id/etUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="228dp"
+        android:layout_height="47dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/login_user"
@@ -49,12 +49,13 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/etPass"
         app:layout_constraintRight_toRightOf="@+id/imageView"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="-14dp" />
 
     <EditText
         android:id="@+id/etPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="229dp"
+        android:layout_height="42dp"
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/login_password"
@@ -65,7 +66,8 @@
         android:layout_marginBottom="74dp"
         app:layout_constraintLeft_toLeftOf="@+id/etUser"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/imageView" />
+        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <TextView
         android:id="@+id/registerText"
