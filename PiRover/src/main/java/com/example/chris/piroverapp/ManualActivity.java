@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,12 +21,15 @@ import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
 
+
 import static java.lang.System.exit;
 
 public class ManualActivity extends AppCompatActivity {
+    private android.os.Handler handler = new android.os.Handler();
 
-    ImageView forwardButton, reverseButton, leftButton, rightButton;
-    Button stop, dc;
+    ImageButton forwardButton, reverseButton, leftButton, rightButton;
+    Button dc;
+
 
     BluetoothAdapter blueAdapter;
     BluetoothSocket blueSocket;
@@ -34,33 +39,37 @@ public class ManualActivity extends AppCompatActivity {
     InputStream inputStream;
 
     String a;
+   String message="";
     boolean connected;
+    boolean runThreadRunning = false;
+    boolean runThreadStop = false;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
 
-        stop = (Button)findViewById(R.id.buttonStop);
-        dc = (Button)findViewById(R.id.buttonDc);
-        final Button connect = (Button)findViewById(R.id.buttonBlue);
+        dc = (Button) findViewById(R.id.buttonDc);
+        final Button connect = (Button) findViewById(R.id.buttonBlue);
 
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 a = "raspberrypi";
-                if(isBluetoothAvailable()){
-                    try{
+                if (isBluetoothAvailable()) {
+                    try {
                         findBT();
                         Toast.makeText(getBaseContext(), R.string.trying, Toast.LENGTH_SHORT).show();
-                    }catch (IOException e){
+                    } catch (IOException e) {
                         Toast.makeText(getBaseContext(), R.string.notestablished, Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                     Toast.makeText(getBaseContext(), R.string.connected, Toast.LENGTH_SHORT).show();
                     connected = true;
-                }else {
+                } else {
                     Toast.makeText(getBaseContext(), R.string.bluetoothelse, Toast.LENGTH_SHORT).show();
                 }
 
@@ -68,31 +77,48 @@ public class ManualActivity extends AppCompatActivity {
             }
         });
 
-        stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(connected)
-                    sendMsg("stop");
-            }
-        });
 
         dc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(connected) {
+                if (connected) {
                     Toast.makeText(getBaseContext(), R.string.closing, Toast.LENGTH_SHORT).show();
                     sendMsg("stop");
+                    exit(0);
+
                     connected = false;
-                }else {
+                } else {
                     Toast.makeText(getBaseContext(), R.string.noconnection, Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
 
 
+        forwardButton = (ImageButton) findViewById(R.id.forwardButton);
+        forwardButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(connected){
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
 
-        forwardButton = (ImageView) findViewById(R.id.forwardButton);
-        forwardButton.setOnClickListener(new View.OnClickListener() {
+                        handleRunDown("w");
+                        return true;
+                    }
+                    case MotionEvent.ACTION_UP: {
+                        handleRunUp();
+                        return true;
+                    }
+                }}
+
+                return false;
+            }
+
+        });
+
+
+        /*forwardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(connected)
@@ -100,81 +126,141 @@ public class ManualActivity extends AppCompatActivity {
 
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getApplicationContext();
-                CharSequence text = "Moving: Forward";
+                int text = R.string.m_forward;
                 Toast toast = Toast.makeText(context,text,duration);
                 //toast.show();
             }
-        });
+        }); */
 
-        reverseButton = (ImageView) findViewById(R.id.reverseButton);
-        reverseButton.setOnClickListener(new View.OnClickListener() {
+        reverseButton = (ImageButton) findViewById(R.id.reverseButton);
+        reverseButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(connected){
+                    switch (motionEvent.getAction()) {
+                        case MotionEvent.ACTION_DOWN: {
+
+                            handleRunDown("s");
+                            return true;
+                        }
+                        case MotionEvent.ACTION_UP: {
+                            handleRunUp();
+                            return true;
+                        }
+                    }}
+
+                return false;
+            }
+
+        });
+       /* reverseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(connected)
+                if (connected)
                     sendMsg("s");
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getApplicationContext();
-                CharSequence text = "Moving: Reverse";
-                Toast toast = Toast.makeText(context,text,duration);
+                int text = R.string.m_reverse;
+                Toast toast = Toast.makeText(context, text, duration);
                 //toast.show();
             }
-        });
+        });*/
 
-        leftButton = (ImageView)findViewById(R.id.leftButton);
-        leftButton.setOnClickListener(new View.OnClickListener() {
+        leftButton = (ImageButton) findViewById(R.id.leftButton);
+        leftButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(connected){
+                    switch (motionEvent.getAction()) {
+                        case MotionEvent.ACTION_DOWN: {
+
+                            handleRunDown("a");
+                            return true;
+                        }
+                        case MotionEvent.ACTION_UP: {
+                            handleRunUp();
+                            return true;
+                        }
+                    }}
+
+                return false;
+            }
+
+        });
+       /* leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(connected)
+                if (connected)
                     sendMsg("a");
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getApplicationContext();
-                CharSequence text = "Moving: Left";
-                Toast toast = Toast.makeText(context,text,duration);
+                int text = R.string.m_left;
+                Toast toast = Toast.makeText(context, text, duration);
                 //toast.show();
             }
-        });
+        });*/
 
-        rightButton = (ImageView)findViewById(R.id.rightButton);
-        rightButton.setOnClickListener(new View.OnClickListener() {
+        rightButton = (ImageButton) findViewById(R.id.rightButton);
+        rightButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(connected){
+                    switch (motionEvent.getAction()) {
+                        case MotionEvent.ACTION_DOWN: {
+
+                            handleRunDown("d");
+                            return true;
+                        }
+                        case MotionEvent.ACTION_UP: {
+                            handleRunUp();
+                            return true;
+                        }
+                    }}
+
+                return false;
+            }
+
+        });
+      /* rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(connected)
+                if (connected)
                     sendMsg("d");
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getApplicationContext();
-                CharSequence text = "Moving: Right";
-                Toast toast = Toast.makeText(context,text,duration);
-               // toast.show();
+                int text = R.string.m_right;
+                Toast toast = Toast.makeText(context, text, duration);
+                //toast.show();
             }
-        });
+        });*/
 
     }
 
-    public static boolean isBluetoothAvailable(){
+    public static boolean isBluetoothAvailable() {
         final BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         return (bluetoothAdapter != null && bluetoothAdapter.isEnabled());
     }
 
-    void findBT() throws IOException{
+    void findBT() throws IOException {
 
         blueAdapter = BluetoothAdapter.getDefaultAdapter();
 
-        if(blueAdapter==null){
-           exit(0);
+        if (blueAdapter == null) {
+            exit(0);
 
         }
 
-        if(!blueAdapter.isEnabled()){
+        if (!blueAdapter.isEnabled()) {
             Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBluetooth, 0);
 
         }
 
         Set<BluetoothDevice> pairedDevices = blueAdapter.getBondedDevices();
-        if(pairedDevices.size() > 0){
+        if (pairedDevices.size() > 0) {
 
-            for(BluetoothDevice device : pairedDevices){
-                if(device.getName().equals(a)) {
+            for (BluetoothDevice device : pairedDevices) {
+                if (device.getName().equals(a)) {
 
                     blueDevice = device;
                     break;
@@ -187,24 +273,74 @@ public class ManualActivity extends AppCompatActivity {
         UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
 
         blueSocket = blueDevice.createRfcommSocketToServiceRecord(uuid);
-        try{
+        try {
             blueSocket.connect();
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             exit(0);
-        }finally {
+        } finally {
             outputStream = blueSocket.getOutputStream();
             inputStream = blueSocket.getInputStream();
         }
 
     }
 
-    void sendMsg(String msg1){
-        try{
+    void sendMsg(String msg1) {
+        try {
             outputStream.write(msg1.getBytes());
-        }catch (IOException e){
-            exit(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+            //exit(0);
         }
     }
+
+    private void handleRunDown(String mes) {
+        if (!runThreadRunning)
+            startRunThread(mes);
+    }
+
+    private void startRunThread(final String mes) {
+        Thread r = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    runThreadRunning = true;
+                    while (!runThreadStop) {
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                sendMsg(mes);
+
+                                //keepSending(message);
+                            }
+                        });
+                        try {
+                            Thread.sleep(50);
+
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException("Could not wait...", e);
+                        }
+
+                    }
+                } finally {
+                    runThreadRunning = false;
+                    runThreadStop = false;
+                }
+            }
+        };
+
+        r.start();
+    }
+
+    private void handleRunUp(){
+        runThreadStop = true;
+    }
+
+   /* private void keepSending(String message){
+        sendMsg(message);
+    }*/
+
 }
+
