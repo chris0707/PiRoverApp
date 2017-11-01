@@ -21,6 +21,12 @@
     <string name="closing">Closing connection...</string>
     <string name="noconnection">No connection found</string>
 
+    <string name="m_forward">Moving: Forward</string>
+    <string name="m_reverse">Moving: Reverse</string>
+    <string name="m_left">Moving: Left</string>
+    <string name="m_right">Moving: Right</string>
+
+
 
 
     <string name="register_name">Enter your full name</string>
