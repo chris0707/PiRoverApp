@@ -5,76 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chris.piroverapp.LoginActivity"
-    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp"
     android:background="@drawable/background3">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="408dp"
+        android:layout_height="452dp"
+        app:srcCompat="@drawable/logo1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="2dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="31dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:background="@android:color/darker_gray"
         android:text="@string/login"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/exitButton"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        tools:layout_constraintRight_creator="1" />
 
     <Button
         android:id="@+id/exitButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
         android:background="@android:color/darker_gray"
         android:text="@string/exit"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="68dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        tools:layout_constraintRight_creator="1" />
 
     <EditText
         android:id="@+id/etUser"
-        android:layout_width="228dp"
-        android:layout_height="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/login_user"
-        android:layout_marginEnd="4dp"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/etPass"
-        app:layout_constraintRight_toRightOf="@+id/imageView"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="-14dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/etPass"
-        android:layout_width="229dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/login_password"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintRight_toRightOf="@+id/etUser"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="74dp"
-        app:layout_constraintLeft_toLeftOf="@+id/etUser"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintLeft_toLeftOf="@+id/etUser" />
 
     <TextView
         android:id="@+id/registerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"
-        android:textColor="@android:color/black"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="@+id/etPass"
@@ -82,23 +97,5 @@
         app:layout_constraintTop_toBottomOf="@+id/etPass"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/etPass" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="224dp"
-        android:layout_height="192dp"
-        app:srcCompat="@drawable/mainlogo"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/etUser"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="82dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="82dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
