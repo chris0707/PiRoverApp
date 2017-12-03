@@ -17,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
+    TextView offlineLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = (EditText)findViewById(R.id.etPass);
 
         final TextView registerLink = (TextView)findViewById(R.id.registerText);
+        offlineLink = (TextView)findViewById(R.id.offlineText);
+
 
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +41,20 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        offlineLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String guestName = getResources().getString(R.string.guest_name);
+                String guestSerial = getResources().getString(R.string.register_serialButton1);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("name", guestName);
+                intent.putExtra("content", guestSerial);
+                startActivity(intent);
+            }
+        });
+
+
 
         exitB.setOnClickListener(new View.OnClickListener() {
             @Override
