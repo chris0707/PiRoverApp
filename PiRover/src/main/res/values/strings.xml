@@ -8,6 +8,7 @@
     <string name="exit">Exit</string>
     <string name="login">Login</string>
     <string name="register">Register Here</string>
+    <string name="guestLogin">Login as guest</string>
     <string name="back">Back</string>
     <string name="auto">Automatic</string>
     <string name="manual">Manual</string>
@@ -47,9 +48,10 @@
     <string name="splash_dev">DEVELOPERS: </string>
     <string name="splash_chris">CHRISTOPHER ALBARILLO</string>
     <string name="splash_law">LAWRENCE PUIG</string>
-    <string name="splash_iff">IFRAH Worsema</string>
+    <string name="splash_iff">IFRAH WORSEMA</string>
 
     <string name="menu_welcome">WELCOME</string>
     <string name="menu_serial">SERIAL ID:</string>
+    <string name="guest_name">Guest</string>
 
 </resources>
