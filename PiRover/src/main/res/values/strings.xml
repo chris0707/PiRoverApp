@@ -12,6 +12,7 @@
     <string name="back">Back</string>
     <string name="auto">Automatic</string>
     <string name="manual">Manual</string>
+
     <string name="connect">Connect</string>
     <string name="trying">Attempting Connection...</string>
     <string name="notestablished">Attempt Failed</string>
