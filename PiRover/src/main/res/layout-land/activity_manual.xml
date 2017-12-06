@@ -9,13 +9,25 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="25dp">
 
+    <Button
+        android:id="@+id/buttonDc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="192dp"
+        android:text="@string/disconnect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:text="PiRover"
         android:textColor="@android:color/black"
         android:textSize="30sp"
@@ -26,59 +38,71 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <ImageView
+    <Button
+        android:id="@+id/buttonBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="192dp"
+        android:text="@string/connect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
         android:id="@+id/forwardButton"
-        android:layout_width="50dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:srcCompat="@drawable/uparrow"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/reverseButton"
-        android:layout_width="50dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="72dp"
-        android:layout_marginStart="316dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/downarrow"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <ImageView
-        android:id="@+id/rightButton"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="140dp"
-        android:layout_marginEnd="244dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/rightarrow"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ImageView
+    <ImageButton
         android:id="@+id/leftButton"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="140dp"
-        android:layout_marginStart="244dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:layout_marginStart="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonBlue"
         app:srcCompat="@drawable/leftarrow"
-        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDc"
+        app:srcCompat="@drawable/rightarrow"
+        tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
 
 </android.support.constraint.ConstraintLayout>
