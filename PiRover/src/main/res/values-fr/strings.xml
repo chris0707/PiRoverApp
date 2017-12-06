@@ -34,5 +34,20 @@
 
     <string name="menu_welcome">BIENVENUE</string>
     <string name="menu_serial">ID DE SERIE:</string>
+    <string name="bluetoothelse">Aller aux paramètres et activer Bluetooth</string>
+    <string name="closing">Fermeture de la connexion ...</string>
+    <string name="connect">Relier</string>
+    <string name="connected">Connection établie</string>
+    <string name="disconnect">Débranché</string>
+    <string name="guestLogin">Connectez-vous comme invité</string>
+    <string name="guest_name">Client</string>
+    <string name="m_forward">Déménagement: Avancer</string>
+    <string name="m_left">Déménagement: gauche</string>
+    <string name="m_reverse">Déménagement: inverse</string>
+    <string name="m_right">Déménagement: Droit</string>
+    <string name="noconnection">Aucune connexion trouvée</string>
+    <string name="notestablished">Tentative échouée</string>
+    <string name="stop">Arrêtez</string>
+    <string name="trying">Tenter</string>
 
 </resources>
