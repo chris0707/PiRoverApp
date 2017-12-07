@@ -8,17 +8,43 @@
     android:background="@drawable/background3">
 
     <Button
+        android:id="@+id/startButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/startButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stopButton2"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toEndOf="@+id/buttonBlue"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <Button
+        android:id="@+id/stopButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/stopButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDc"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
         android:id="@+id/buttonDc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginStart="92dp"
         android:text="@string/disconnect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toEndOf="@+id/toggleButton"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintRight_creator="1" />
 
@@ -33,22 +59,6 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray"
-        android:text="ToggleButton"
-        app:layout_constraintStart_toEndOf="@+id/buttonBlue"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <ImageView

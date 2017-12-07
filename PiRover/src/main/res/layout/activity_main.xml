@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background3"
     tools:context="com.example.chris.piroverapp.MainActivity"
-    tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp"
-    android:background="@drawable/background3">
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/textView1"
@@ -16,23 +16,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
         android:text="@string/app_titleMenu"
         android:textColor="@android:color/black"
         android:textSize="30sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="180dp"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/automaticbutt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="284dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,129 +44,163 @@
         android:id="@+id/manualconf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="88dp"
         android:background="@android:color/darker_gray"
-        android:layout_marginEnd="74dp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/automaticbutt" />
+        app:layout_constraintTop_toTopOf="@+id/automaticbutt"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/autoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
         android:text="@string/auto"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="@+id/automaticbutt"
-        android:layout_marginTop="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/automaticbutt" />
+        app:layout_constraintTop_toBottomOf="@+id/automaticbutt"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/manualText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
         android:text="@string/manual"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:layout_marginStart="14dp"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="14dp"
+        app:layout_constraintLeft_toLeftOf="@+id/manualconf"
         app:layout_constraintTop_toBottomOf="@+id/manualconf"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/manualconf" />
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/welcomText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:text="@string/menu_welcome"
         android:textColor="@android:color/black"
         android:textSize="30sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="35dp"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="0dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="46dp"
+        android:layout_marginEnd="55dp"
         android:layout_marginStart="55dp"
+        android:layout_marginTop="55dp"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/textView1"
-        android:layout_marginEnd="55dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="55dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="46dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/welcomText" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/welcomText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/serialText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:layout_marginStart="16dp"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleserialText"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/titleserialText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="179dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/menu_serial"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:layout_marginStart="16dp"
-        tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoText"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="179dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        />
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="98dp"
-        android:layout_height="82dp"
-        android:id="@+id/coordinatorLayout"
-        android:layout_marginEnd="16dp"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
+    <RelativeLayout
+        android:layout_width="308dp"
+        android:layout_height="301dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="17dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
-        <android.support.design.widget.FloatingActionButton
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:backgroundTint="@color/colorPrimaryDark"
-            app:fabSize="normal"
-            android:src="@drawable/ic_action_name"
-            android:id="@+id/fab"/>
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+
+            fab:menu_fab_label="@string/devs"
+            fab:fab_colorNormal="#DA4336"
+            fab:fab_colorPressed="#E75043"
+            fab:fab_colorRipple="#99FFFFFF"
+            fab:fab_showShadow="true"
+            fab:menu_labels_colorNormal="#333333"
+            fab:menu_labels_colorPressed="#444444"
+            fab:menu_labels_colorRipple="#66FFFFFF"
+            fab:menu_labels_showShadow="true"
+            fab:menu_labels_maxLines="-1"
+            fab:menu_labels_position="left"
+            fab:menu_openDirection="up"
+            fab:fab_shadowColor="#66000000"
+            fab:menu_labels_ellipsize="end"
+            fab:menu_labels_singleLine="true">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_dialog_info"
+                fab:fab_label="@string/site_chris"
+                fab:fab_size="mini" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_dialog_info"
+                fab:fab_label="@string/site_lawrence"
+                fab:fab_size="mini" />
 
 
-    </android.support.design.widget.CoordinatorLayout>
+        </com.github.clans.fab.FloatingActionMenu>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

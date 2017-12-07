@@ -55,4 +55,23 @@
     <string name="menu_serial">SERIAL ID:</string>
     <string name="guest_name">Guest</string>
 
+    <!-- AutoControl -->
+    <string name="startButton">AutoMap</string>
+    <string name="stopButton">Stop</string>
+
+    <!-- Commands -->
+    <string name="forward">w</string>
+    <string name="reverse">s</string>
+    <string name="left">a</string>
+    <string name="right">d</string>
+    <string name="startAuto">automap</string>
+    <string name="stopAuto">stop</string>
+    <string name="raspberrypiID">raspberrypi</string>
+
+    <!-- FloatFunctions -->
+    <string name="site_chris">Visit Chris\' GitHub</string>
+    <string name="site_lawrence">Visit Lawrence\'s Github</string>
+    <string name="devs">Developers</string>
+
+
 </resources>
