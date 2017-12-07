@@ -32,7 +32,10 @@ AutoActivity extends AppCompatActivity {
 
 
     Button toggleButton;
+    Button connect, dc, startB, stopB;
     Boolean check = Boolean.FALSE;
+
+
 
     String a;
     String message="";
@@ -45,30 +48,106 @@ AutoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto);
 
-        toggleButton = (Button)findViewById(R.id.toggleButton);
-        toggleButton.setOnClickListener(new View.OnClickListener(){
+        connect = (Button)findViewById(R.id.buttonBlue);
+        dc = (Button)findViewById(R.id.buttonDc);
+        startB =(Button)findViewById(R.id.startButton);
+        stopB = (Button)findViewById(R.id.stopButton);
+
+        connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (check == Boolean.FALSE) {
-                    int duration = Toast.LENGTH_SHORT;
-                    Context context = getApplicationContext();
-                    CharSequence text = "Automode: ON";
-                    Toast toast = Toast.makeText(context,text,duration);
-                    toast.show();
-                    check = Boolean.TRUE;
+                //a = "raspberrypi";
+                a = getString(R.string.raspberrypiID);
+                if (isBluetoothAvailable()) {
+                    try {
+                        findBT();
+                        Toast.makeText(getBaseContext(), R.string.trying, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        Toast.makeText(getBaseContext(), R.string.notestablished, Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(getBaseContext(), R.string.connected, Toast.LENGTH_SHORT).show();
+                    connected = true;
+                } else {
+                    Toast.makeText(getBaseContext(), R.string.bluetoothelse, Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
 
-                else {
-                    Context context = getApplicationContext();
-                    int duration = Toast.LENGTH_SHORT;
-                    CharSequence text = "Automode: OFF";
-                    Toast toast = Toast.makeText(context,text,duration);
-                    toast.show();
-                    check = Boolean.FALSE;
+        dc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (connected) {
+                    Toast.makeText(getBaseContext(), R.string.closing, Toast.LENGTH_SHORT).show();
+                    //sendMsg("stop");
+                    String stop = getString(R.string.stopButton);
+                    sendMsg(stop);
+                    exit(0);
+
+                    connected = false;
+                } else {
+                    Toast.makeText(getBaseContext(), R.string.noconnection, Toast.LENGTH_SHORT).show();
 
                 }
             }
         });
+
+        startB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(connected){
+                    String start = getString(R.string.startAuto);
+                    sendMsg(start);
+                }
+            }
+        });
+
+        stopB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(connected){
+                    String stop = getString(R.string.stopAuto);
+                    sendMsg(stop);
+                }
+            }
+        });
+
+
+        /*toggleButton = (Button)findViewById(R.id.toggleButton);
+        toggleButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if (check == Boolean.FALSE) {
+                    if(connected) {
+                        int duration = Toast.LENGTH_SHORT;
+                        Context context = getApplicationContext();
+                        CharSequence text = "Automode: ON";
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+
+                        sendMsg("automap");
+
+
+                        check = Boolean.TRUE;
+                    }
+                }
+
+                else {
+                    if(connected) {
+                        Context context = getApplicationContext();
+                        int duration = Toast.LENGTH_SHORT;
+                        CharSequence text = "Automode: OFF";
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+
+                        sendMsg("stop");
+
+                        check = Boolean.FALSE;
+                    }
+
+                }
+            }
+        });*/
     }
 
 
@@ -106,7 +185,9 @@ AutoActivity extends AppCompatActivity {
 
         }
 
-        UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        String serial = getString(R.string.register_serialButton1);
+        UUID uuid = UUID.fromString(serial);
 
         blueSocket = blueDevice.createRfcommSocketToServiceRecord(uuid);
         try {

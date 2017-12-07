@@ -68,16 +68,16 @@
         android:id="@+id/manualText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:layout_marginStart="228dp"
         android:text="@string/manual"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:layout_marginStart="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/autoText"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="129dp"
-        app:layout_constraintLeft_toLeftOf="@+id/manualconf" />
+        tools:layout_constraintLeft_creator="1" />
 
     <TextView
         android:id="@+id/welcomText"
@@ -140,28 +140,6 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="88dp"
-        android:layout_height="289dp"
-        android:layout_marginEnd="16dp"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="7dp">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/ic_action_name"
-            app:backgroundTint="@color/colorPrimaryDark"
-            app:fabSize="normal" />
-
-
-    </android.support.design.widget.CoordinatorLayout>
 
 </android.support.constraint.ConstraintLayout>

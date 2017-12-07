@@ -58,7 +58,8 @@ public class ManualActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                a = "raspberrypi";
+                //a = "raspberrypi";
+                a = getString(R.string.raspberrypiID);
                 if (isBluetoothAvailable()) {
                     try {
                         findBT();
@@ -83,7 +84,8 @@ public class ManualActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (connected) {
                     Toast.makeText(getBaseContext(), R.string.closing, Toast.LENGTH_SHORT).show();
-                    sendMsg("stop");
+                    String stop = getString(R.string.stopButton);
+                    sendMsg(stop);
                     exit(0);
 
                     connected = false;
@@ -102,8 +104,9 @@ public class ManualActivity extends AppCompatActivity {
                 if(connected){
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
+                        String w = getString(R.string.forward);
 
-                        handleRunDown("w");
+                        handleRunDown(w);
                         return true;
                     }
                     case MotionEvent.ACTION_UP: {
@@ -140,7 +143,9 @@ public class ManualActivity extends AppCompatActivity {
                     switch (motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN: {
 
-                            handleRunDown("s");
+                            String s = getString(R.string.reverse);
+
+                            handleRunDown(s);
                             return true;
                         }
                         case MotionEvent.ACTION_UP: {
@@ -174,7 +179,9 @@ public class ManualActivity extends AppCompatActivity {
                     switch (motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN: {
 
-                            handleRunDown("a");
+                            String a = getString(R.string.left);
+
+                            handleRunDown(a);
                             return true;
                         }
                         case MotionEvent.ACTION_UP: {
@@ -208,7 +215,9 @@ public class ManualActivity extends AppCompatActivity {
                     switch (motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN: {
 
-                            handleRunDown("d");
+                            String d = getString(R.string.right);
+
+                            handleRunDown(d);
                             return true;
                         }
                         case MotionEvent.ACTION_UP: {
@@ -269,8 +278,9 @@ public class ManualActivity extends AppCompatActivity {
             }
 
         }
-
-        UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        String serial = getString(R.string.register_serialButton1);
+        //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        UUID uuid = UUID.fromString(serial);
 
         blueSocket = blueDevice.createRfcommSocketToServiceRecord(uuid);
         try {
