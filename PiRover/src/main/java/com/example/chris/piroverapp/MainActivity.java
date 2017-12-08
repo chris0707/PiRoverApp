@@ -1,9 +1,13 @@
 package com.example.chris.piroverapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView nameText;
     TextView contentText;
+    ConstraintLayout cons;
 
     private FloatingActionMenu fam;
     private FloatingActionButton fabChris, fabLawrence;
+    String colour;
 
 
 
@@ -34,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         final Intent intent =getIntent();
 
@@ -45,6 +53,24 @@ public class MainActivity extends AppCompatActivity {
 
         nameText.setText(name);
         contentText.setText(content);
+
+        /*SharedPreferences prefs = getSharedPreferences("bgColour", MODE_PRIVATE);
+        colour = prefs.getString("colour", "WHITE");
+
+
+        cons = (ConstraintLayout)findViewById(R.id.constraint);
+
+        if(colour.equals("GREEN")){
+            cons.setBackgroundColor(Color.GREEN);
+        }
+        else if(colour.equals("YELLOW")){
+            cons.setBackgroundColor(Color.YELLOW);
+        }
+        else if(colour.equals("RED")){
+            cons.setBackgroundColor(Color.RED);
+
+        }*/
+
 
         fabChris = (FloatingActionButton) findViewById(R.id.fab1);
         fabLawrence = (FloatingActionButton) findViewById(R.id.fab2);
@@ -74,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
 
         fabChris.setOnClickListener(onButtonClick());
         fabLawrence.setOnClickListener(onButtonClick());
-
 
 
 
