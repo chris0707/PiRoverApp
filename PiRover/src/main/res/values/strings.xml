@@ -73,5 +73,12 @@
     <string name="site_lawrence">Visit Lawrence\'s Github</string>
     <string name="devs">Developers</string>
 
+    <string name="color_green">GREEN</string>
+    <string name="color_yellow">YELLOW</string>
+    <string name="color_blue">BLUE</string>
+
+
+
+
 
 </resources>
