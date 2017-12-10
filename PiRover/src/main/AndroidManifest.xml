@@ -13,23 +13,25 @@
         android:allowBackup="true"
         android:icon="@mipmap/mainicon2"
         android:label="@string/app_title"
-
         android:roundIcon="@mipmap/mainicon2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-            <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ManualActivity" />
-        <activity android:name=".AutoActivity"></activity>
+        <activity android:name=".AutoActivity" />
+        <activity
+            android:name=".NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

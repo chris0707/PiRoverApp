@@ -31,8 +31,17 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = (EditText)findViewById(R.id.etPass);
 
         final TextView registerLink = (TextView)findViewById(R.id.registerText);
+        final TextView aboutTextView;
+        aboutTextView = (TextView)findViewById(R.id.aboutTextView);
         offlineLink = (TextView)findViewById(R.id.offlineText);
 
+        aboutTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, NavigationDrawer.class);
+                startActivity(intent);
+            }
+        });
 
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
