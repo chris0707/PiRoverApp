@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,12 +14,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    TextView drawerContent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -57,6 +64,8 @@ public class NavigationDrawer extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation_drawer, menu);
+        drawerContent = (TextView)findViewById(R.id.drawerContent);
+        drawerContent.setText("This is a prototype project that is inspired by NASA’s own rover. It can be used for research purposes due to its small body and mobile features. In the future we hope to create an even smaller type rover that will be just as mobile, but will also have new features such as; gathering raw materials and even being fully automatic. This prototype will have three different on settings; automatic, manual and a pattern mode for testing. It will run off of a Raspberry Pi database that includes pre-registered codes and will be activated via Bluetooth from a mobile device software.");
         return true;
     }
 
@@ -82,12 +91,16 @@ public class NavigationDrawer extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menuAbout) {
-          //  Intent intent = new Intent(NavigationDrawer.this,)
+            drawerContent = (TextView)findViewById(R.id.drawerContent);
+            drawerContent.setText("This is a prototype project that is inspired by NASA’s own rover. It can be used for research purposes due to its small body and mobile features. In the future we hope to create an even smaller type rover that will be just as mobile, but will also have new features such as; gathering raw materials and even being fully automatic. This prototype will have three different on settings; automatic, manual and a pattern mode for testing. It will run off of a Raspberry Pi database that includes pre-registered codes and will be activated via Bluetooth from a mobile device software.");
         } else if (id == R.id.menuDevelopers) {
-
+            drawerContent = (TextView)findViewById(R.id.drawerContent);
+            drawerContent.setText("Chris Albarillo \n Lawrence Puig ");
         } else if (id == R.id.menuMore) {
-
+            drawerContent = (TextView)findViewById(R.id.drawerContent);
+            drawerContent.setText("Extras: ");
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
