@@ -9,27 +9,25 @@
         <item name="android:textColor">@color/White</item>
         <item name="android:textColorHint">@color/White</item>
         <item name="android:textColorPrimary">@color/White</item>
+        <item name="android:popupMenuStyle">@style/CustomOverflowBack</item>
 
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="MyActionBar.MenuTextStyle"
-        parent="android:style/TextAppearance.Holo.Widget.ActionBar.Menu">
-        <item name="android:textColor">@color/BrownShade</item>
-
+    <style name="CustomOverflowBack1" parent="android:style/Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@android:color/background_dark</item>
     </style>
 
-
-    <style name="blackTextTheme" parent="android:Widget.Holo.Light.ListPopupWindow">
-
-
-
-
-
+    <style name="CustomOverflowBack" parent="Widget.AppCompat.Light.ListPopupWindow">
+        <item name="android:popupBackground">@android:color/background_dark</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" >
+        <item name="android:background">@color/BrownShade</item>
+    </style>
+
 
 
 </resources>

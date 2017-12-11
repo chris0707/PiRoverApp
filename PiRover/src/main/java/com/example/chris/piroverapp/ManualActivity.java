@@ -298,7 +298,7 @@ public class ManualActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         String colourSelected = "";
 
-        
+
 
         //cons = (ConstraintLayout)findViewById(R.id.constraint);
         switch (item.getItemId()) {
