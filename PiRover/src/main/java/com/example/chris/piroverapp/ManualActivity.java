@@ -287,6 +287,7 @@ public class ManualActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actionbarmenu,menu);
+
         return true;
 
     }
@@ -296,6 +297,8 @@ public class ManualActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("bgColour", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         String colourSelected = "";
+
+        
 
         //cons = (ConstraintLayout)findViewById(R.id.constraint);
         switch (item.getItemId()) {

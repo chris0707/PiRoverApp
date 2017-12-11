@@ -78,16 +78,13 @@ public class MainActivity extends AppCompatActivity {
         fabLawrence = (FloatingActionButton) findViewById(R.id.fab2);
         fam = (FloatingActionMenu) findViewById(R.id.fab_menu);
 
-        fam.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
+       /* fam.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
             public void onMenuToggle(boolean opened) {
-                if (opened) {
-                    showToast("Menu is opened");
-                } else {
-                    showToast("Menu is closed");
-                }
+
+                //Opens the menu
             }
-        });
+        });*/
 
         fam.setOnClickListener(new View.OnClickListener() {
             @Override
