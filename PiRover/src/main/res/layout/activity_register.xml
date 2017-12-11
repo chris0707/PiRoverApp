@@ -7,7 +7,7 @@
     tools:context="com.example.chris.piroverapp.RegisterActivity"
     tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp"
-    android:background="@drawable/background3">
+    android:background="@drawable/blackmetal">
 
     <EditText
         android:id="@+id/editName"
@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/register_name"
+        android:backgroundTint="@color/White"
         android:inputType="textPersonName"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/register_user"
+        android:backgroundTint="@color/White"
         android:inputType="textPersonName"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -46,6 +48,7 @@
         android:ems="10"
         android:hint="@string/register_pass"
         android:inputType="textPassword"
+        android:backgroundTint="@color/White"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="@+id/editUser"
@@ -58,7 +61,7 @@
         android:id="@+id/registerButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:background="@color/BrownShade"
         android:text="Register"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -76,7 +79,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_serial"
-        android:textColor="@android:color/black"
         android:textSize="24sp"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -106,6 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
+            android:buttonTint="@color/White"
+            android:textColor="@color/White"
             android:text="@string/register_serialButton1" />
 
         <RadioButton
@@ -114,6 +118,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
+            android:buttonTint="@color/White"
+            android:textColor="@color/White"
             android:text="@string/register_serialButton2" />
     </RadioGroup>
 
@@ -122,7 +128,6 @@
         android:layout_width="0dp"
         android:layout_height="27dp"
         android:text=""
-        android:textColor="@android:color/black"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"

@@ -26,7 +26,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ManualActivity" />
+        <activity android:name=".ManualActivity"/>
         <activity android:name=".AutoActivity" />
         <activity
             android:name=".NavigationDrawer"

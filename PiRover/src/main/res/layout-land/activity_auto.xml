@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chris.piroverapp.AutoActivity"
-    android:background="@drawable/background3">
+    android:background="@drawable/blackmetal">
 
     <Button
-        android:id="@+id/startButton2"
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="136dp"
@@ -16,24 +16,26 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/startButton"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/stopButton2"
+        app:layout_constraintEnd_toStartOf="@+id/stopButton"
         app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toEndOf="@+id/buttonBlue"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.956" />
 
     <Button
-        android:id="@+id/stopButton2"
+        android:id="@+id/stopButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="136dp"
         android:layout_marginEnd="64dp"
         android:layout_marginTop="8dp"
         android:text="@string/stopButton"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonDc"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -43,6 +45,7 @@
         android:layout_marginBottom="144dp"
         android:layout_marginEnd="50dp"
         android:text="@string/disconnect"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_constraintBaseline_creator="1"
@@ -55,6 +58,7 @@
         android:layout_marginBottom="144dp"
         android:layout_marginStart="60dp"
         android:text="@string/connect"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_constraintBottom_creator="1"
@@ -62,7 +66,7 @@
         tools:layout_constraintTop_creator="1" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"

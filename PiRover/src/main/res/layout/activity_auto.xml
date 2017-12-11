@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chris.piroverapp.AutoActivity"
-    android:background="@drawable/background3">
+    android:background="@drawable/blackmetal">
 
 
     <Button
@@ -16,6 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/connect"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonDc"
         app:layout_constraintHorizontal_bias="0.575"
@@ -31,6 +32,7 @@
         android:layout_marginBottom="144dp"
         android:layout_marginEnd="68dp"
         android:text="@string/disconnect"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_constraintBaseline_creator="1"
@@ -57,6 +59,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginStart="104dp"
         android:text="@string/startButton"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toTopOf="@+id/buttonBlue"
         app:layout_constraintEnd_toStartOf="@+id/stopButton"
         app:layout_constraintHorizontal_bias="0.687"
@@ -69,6 +72,7 @@
         android:layout_marginBottom="112dp"
         android:layout_marginEnd="88dp"
         android:text="@string/stopButton"
+        android:background="@color/BrownShade"
         app:layout_constraintBottom_toTopOf="@+id/buttonDc"
         app:layout_constraintEnd_toEndOf="parent" />
 
