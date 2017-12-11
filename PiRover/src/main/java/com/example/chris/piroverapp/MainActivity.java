@@ -2,14 +2,18 @@ package com.example.chris.piroverapp;
 /*PiNivea
 
  */
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout cons;
 
     private FloatingActionMenu fam;
-    private FloatingActionButton fabChris, fabLawrence;
+    private FloatingActionButton fabChris, fabLawrence, fabCallChris;
     String colour;
 
 
@@ -76,7 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
         fabChris = (FloatingActionButton) findViewById(R.id.fab1);
         fabLawrence = (FloatingActionButton) findViewById(R.id.fab2);
+        fabCallChris = (FloatingActionButton) findViewById(R.id.fab3);
         fam = (FloatingActionMenu) findViewById(R.id.fab_menu);
+
+
+
 
        /* fam.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
@@ -99,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
         fabChris.setOnClickListener(onButtonClick());
         fabLawrence.setOnClickListener(onButtonClick());
+        fabCallChris.setOnClickListener(onButtonClick());
 
 
 
@@ -132,10 +141,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                }else {
+                }else if(view == fabLawrence) {
                     Uri uri  = Uri.parse("https://github.com/n01033296");
                     Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(intent1);
+                }else{
+
+
+
+                    if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
+                        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE},1);
+                    }else{
+                        String chrisNumber = getResources().getString(R.string.chris_number);
+                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+chrisNumber));
+                        startActivity(intent);
+                    }
+
+
                 }
                 fam.close(true);
             }
