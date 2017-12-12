@@ -85,9 +85,12 @@
 
     <string name="action_call">Call Chris</string>
     <string name="chris_number">4165263057</string>
-
-
-
-
+    <string name="pirover">PiRover</string>
+    <string name="about">About</string>
+    <string name="developers">Developers</string>
+    <string name="more">More</string>
+    <string name="menuAbout">This is a prototype project that is inspired by NASA’s own rover. It can be used for research purposes due to its small body and mobile features. In the future we hope to create an even smaller type rover that will be just as mobile, but will also have new features such as; gathering raw materials and even being fully automatic. This prototype will have three different on settings; automatic, manual and a pattern mode for testing. It will run off of a Raspberry Pi database that includes pre-registered codes and will be activated via Bluetooth from a mobile device software.</string>
+    <string name="menuDevelopers">Chris Albarillo \n Lawrence Puig </string>
+    <string name="menuMore">Extras: </string>
 
 </resources>
