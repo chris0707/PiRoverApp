@@ -31,23 +31,19 @@ public class NavigationDrawer extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setBackgroundColor(getResources().getColor(R.color.BrownShade));
     }
 
     @Override
@@ -88,17 +84,21 @@ public class NavigationDrawer extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
+
+
         if (id == R.id.menuAbout) {
+
             drawerContent = (TextView)findViewById(R.id.drawerContent);
-            drawerContent.setText("This is a prototype project that is inspired by NASA’s own rover. It can be used for research purposes due to its small body and mobile features. In the future we hope to create an even smaller type rover that will be just as mobile, but will also have new features such as; gathering raw materials and even being fully automatic. This prototype will have three different on settings; automatic, manual and a pattern mode for testing. It will run off of a Raspberry Pi database that includes pre-registered codes and will be activated via Bluetooth from a mobile device software.");
+            drawerContent.setText(getResources().getString(R.string.menuAbout));
         } else if (id == R.id.menuDevelopers) {
             drawerContent = (TextView)findViewById(R.id.drawerContent);
-            drawerContent.setText("Chris Albarillo \n Lawrence Puig ");
+            drawerContent.setText(getResources().getString(R.string.menuDevelopers));
         } else if (id == R.id.menuMore) {
             drawerContent = (TextView)findViewById(R.id.drawerContent);
-            drawerContent.setText("Extras: ");
+            drawerContent.setText(getResources().getString(R.string.menuMore));
         }
 
 

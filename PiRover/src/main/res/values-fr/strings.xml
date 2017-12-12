@@ -10,7 +10,7 @@
     <string name="register">Inscrivez-vous ici</string>
     <string name="back">Arrière</string>
     <string name="auto">Automatique</string>
-    <string name="manual">Manual</string>
+    <string name="manual">Manuel</string>
 
     <string name="register_name">Entrez votre nom complet</string>
     <string name="register_user">Entrez votre nom d\'utilisateur</string>
@@ -23,11 +23,11 @@
 
     <string name="login_user">Nom d\'utilisateur</string>
     <string name="login_password">Mot de passe</string>
-    <string name="login_title">TestTitle</string>
+    <string name="login_title">Titre du test</string>
 
     <!-- Splash Names -->
     <string name="splash_teamName">Pi NIVEA PRODUCTIONS</string>
-    <string name="splash_dev">DEVELOPERS: </string>
+    <string name="splash_dev">DÉVELOPPEURS:</string>
     <string name="splash_chris">CHRISTOPHER ALBARILLO</string>
     <string name="splash_law">LAWRENCE PUIG</string>
     <string name="splash_iff">IFRAH HASSAN</string>
@@ -49,5 +49,35 @@
     <string name="notestablished">Tentative échouée</string>
     <string name="stop">Arrêtez</string>
     <string name="trying">Tenter</string>
+    <string name="startButton">AutoMap</string>
+    <string name="stopButton">Stop</string>
+    <string name="right">d</string>
+    <string name="left">a</string>
+    <string name="reverse">s</string>
+    <string name="forward">w</string>
+    <string name="startAuto">automap</string>
+    <string name="stopAuto">stop</string>
+    <string name="raspberrypiID">raspberrypi</string>
+    <string name="site_lawrence">Visite Lawrence\'s Github</string>
+    <string name="site_chris">Visite Chris\' GitHub</string>
+    <string name="devs">Développeurs</string>
+    <string name="color_green">" VERT"</string>
+    <string name="color_yellow">JAUNE</string>
+    <string name="color_blue">BLEU</string>
+    <string name="title_activity_navigation_drawer">Sur</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="AboutTextView">Sur</string>
+    <string name="drawerContent">drawerContent</string>
+    <string name="action_call">Appelez Chris</string>
+    <string name="chris_number">4165263057</string>
+    <string name="pirover">PiRover</string>
+    <string name="about">Sur</string>
+    <string name="developers">Développeurs</string>
+    <string name="more">Plus</string>
+    <string name="menuDevelopers">"Chris Albarillo   Lawrence Puig "</string>
+    <string name="menuAbout">C\'est un projet prototype qui s\'inspire du propre rover de la NASA. Il peut être utilisé à des fins de recherche en raison de son petit corps et des caractéristiques mobiles. Dans l\'avenir, nous espérons créer un rover de type encore plus petit qui sera tout aussi mobile, mais aura également de nouvelles fonctionnalités telles que; rassembler des matières premières et même être entièrement automatique. Ce prototype aura trois réglages différents; automatique, manuel et un mode de modèle pour les tests. Il fonctionnera à partir d\'une base de données Raspberry Pi qui comprend des codes pré-enregistrés et sera activé via Bluetooth à partir d\'un logiciel de périphérique mobile.</string>
+    <string name="menuMore">Extras:</string>
 
 </resources>

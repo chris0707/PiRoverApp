@@ -29,102 +29,153 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <Button
-        android:id="@+id/buttonDc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginTop="204dp"
-        android:background="@color/BrownShade"
-        android:text="@string/disconnect"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintRight_creator="1" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        android:textColor="@color/BrownShade"
-        android:text="PiRover"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <Button
-        android:id="@+id/buttonBlue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="204dp"
-        android:background="@color/BrownShade"
-        android:text="@string/connect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ImageButton
-        android:id="@+id/forwardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:srcCompat="@drawable/uparrow"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1" />
-
-    <ImageButton
-        android:id="@+id/reverseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+    <TableLayout
+        android:id="@+id/tableLayout3"
+        android:layout_width="267dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="60dp">
+
+            <ImageButton
+                android:id="@+id/forwardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/uparrow"
+                tools:layout_constraintBottom_creator="1"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_editor_absoluteX="179dp"
+                tools:layout_editor_absoluteY="172dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/leftButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/leftarrow"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintRight_creator="1"
+                tools:layout_constraintTop_creator="1"
+                tools:layout_editor_absoluteX="100dp"
+                tools:layout_editor_absoluteY="256dp" />
+
+            <ImageButton
+                android:id="@+id/rightButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/rightarrow"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintTop_creator="1"
+                tools:layout_editor_absoluteX="256dp"
+                tools:layout_editor_absoluteY="256dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="25dp">
+
+            <ImageButton
+                android:id="@+id/reverseButton"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/downarrow"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintTop_creator="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="323dp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableRow
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonBlue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@color/BrownShade"
+            android:text="@string/connect"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="514dp" />
+
+        <Button
+            android:id="@+id/buttonDc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="35dp"
+            android:layout_weight="1"
+            android:background="@color/BrownShade"
+            android:text="@string/disconnect"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_editor_absoluteX="221dp"
+            tools:layout_editor_absoluteY="514dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="141dp"
+        android:layout_height="57dp"
+        android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout3"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/downarrow"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
-    <ImageButton
-        android:id="@+id/leftButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
-        android:layout_marginStart="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonBlue"
-        app:srcCompat="@drawable/leftarrow"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <ImageButton
-        android:id="@+id/rightButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
-        android:layout_marginEnd="44dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonDc"
-        app:srcCompat="@drawable/rightarrow"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="@string/pirover"
+            android:textAlignment="center"
+            android:textColor="@color/BrownShade"
+            android:textSize="30sp"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="72dp" />
+    </TableRow>
 
 </android.support.constraint.ConstraintLayout>
