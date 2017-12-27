@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password = editPass.getText().toString();
                 final String content = text1.getText().toString();
                 if(name.isEmpty() || username.isEmpty() || password.isEmpty() ||content.isEmpty()){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
                     builder.setMessage("Register Failed.")
                             .setNegativeButton("Retry", null)
                             .create()
@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             } else{
 
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
                                 builder.setMessage("Register Failed")
                                         .setNegativeButton("Retry", null)
                                         .create()
