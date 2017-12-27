@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                                 LoginActivity.this.startActivity(intent);
 
                             }else{
-                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this,R.style.ThemeDialogCustom);
                                 builder.setMessage("Login Failed")
                                         .setNegativeButton("Retry", null)
                                         .create()
