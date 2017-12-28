@@ -2,6 +2,7 @@ package com.example.chris.piroverapp;
 /*PiNivea
 
  */
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         final Button loginB = (Button)findViewById(R.id.loginButton);
-        final Button exitB = (Button)findViewById(R.id.exitButton);
+        //final Button exitB = (Button)findViewById(R.id.exitButton);
 
         final EditText etUsername = (EditText)findViewById(R.id.etUser);
         final EditText etPassword = (EditText)findViewById(R.id.etPass);
@@ -67,12 +68,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        exitB.setOnClickListener(new View.OnClickListener() {
+       /* exitB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finishAffinity();
             }
-        });
+        });*/
 
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,5 +124,30 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    }
+    public void onBackPressed() {
+      /*  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }*/
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Are you sure you want to Exit?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
