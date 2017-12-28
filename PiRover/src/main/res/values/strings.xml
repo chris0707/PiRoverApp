@@ -94,4 +94,8 @@
     <string name="menuDevelopers">Chris Albarillo \n Lawrence Puig </string>
     <string name="menuMore">Extras: </string>
 
+    <string name="alert_yes">Yes</string>
+    <string name="alert_no">No</string>
+    <string name="alert_message">Are you sure you want to Exit?</string>
+
 </resources>

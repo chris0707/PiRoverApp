@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PiRover/PiRover.iml" filepath="$PROJECT_DIR$/PiRover/PiRover.iml" />
-      <module fileurl="file://C:\Users\heake\OneDrive\Documents\GitHub\PiRoverApp\PiRover\PiRover.iml" filepath="C:\Users\heake\OneDrive\Documents\GitHub\PiRoverApp\PiRover\PiRover.iml" />
       <module fileurl="file://$PROJECT_DIR$/PiRoverApp.iml" filepath="$PROJECT_DIR$/PiRoverApp.iml" />
     </modules>
   </component>

@@ -133,16 +133,16 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }*/
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.ThemeDialogCustom);
         builder.setCancelable(false);
-        builder.setMessage("Are you sure you want to Exit?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setMessage(getResources().getString(R.string.alert_message));
+        builder.setPositiveButton(getResources().getString(R.string.alert_yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getResources().getString(R.string.alert_no), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
