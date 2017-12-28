@@ -99,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 }
 
-    public void onRadioButtonClicked(View view){
+    public void onRadioButtonClicked(View view){ //get rid of this code
 
         boolean checked = ((RadioButton)view).isChecked();
 
