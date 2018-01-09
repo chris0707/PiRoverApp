@@ -22,10 +22,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.Objects;
+
 public class RegisterActivity extends AppCompatActivity {
 
     String content ="";
     TextView text1;
+    EditText confirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText editName = (EditText)findViewById(R.id.editName);
         final EditText editUser = (EditText)findViewById(R.id.editUser);
         final EditText editPass = (EditText)findViewById(R.id.editPassword);
+        confirmPassword = (EditText) findViewById(R.id.editConfirm);
         text1 =(TextView)findViewById(R.id.textView6);
 
 
@@ -46,8 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
                 final String name = editName.getText().toString();
                 final String username = editUser.getText().toString();
                 final String password = editPass.getText().toString();
-                final String content = text1.getText().toString();
-                if(name.isEmpty() || username.isEmpty() || password.isEmpty() ||content.isEmpty()){
+                final String content = "test";
+                final String confirmP = confirmPassword.getText().toString();
+
+                if(name.isEmpty() || username.isEmpty() || password.isEmpty() ||content.isEmpty() || confirmP.isEmpty()){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
                     builder.setMessage("Register Failed.")
                             .setNegativeButton("Retry", null)
@@ -58,6 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else{
 
+
+                if(Objects.equals(password, confirmP)){
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -92,50 +100,25 @@ public class RegisterActivity extends AppCompatActivity {
                 };
                 RegisterRequest registerRequest = new RegisterRequest(name, username, password, content, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                queue.add(registerRequest);  }
+                queue.add(registerRequest);}
+
+                else{
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
+                    builder.setMessage("Register Failed. Password does not match")
+                            .setNegativeButton("Retry", null)
+                            .create()
+                            .show();
+
+                }
+
+                }
 
             }
         });
 
+
 }
-
-    public void onRadioButtonClicked(View view){ //get rid of this code
-
-        boolean checked = ((RadioButton)view).isChecked();
-
-        switch (view.getId()){
-
-            case R.id.serialRadio1:
-                if(checked) {
-                    content = "00001101-0000-1000-8000-00805f9b34fb";
-                    text1.setText(content);
-                }else{
-
-                    content.isEmpty();
-
-                }
-                break;
-
-            case R.id.serialRadio2:
-                if(checked) {
-                    content = "00001101-0000-1000-8000-12345test";
-                    text1.setText(content);
-                }else{
-
-                    content.isEmpty();
-
-                }
-                break;
-
-
-
-
-
-        }
-
-
-
-    }
 
 
 
