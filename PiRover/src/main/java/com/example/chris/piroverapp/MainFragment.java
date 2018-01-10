@@ -20,9 +20,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     View view;
     Uri uri;
 
-    private FloatingActionMenu fam;
-    private FloatingActionButton fabChris, fabLawrence, fabCallChris;
-    String colour;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +30,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Button manubutton = (Button) view.findViewById(R.id.manualcheck);
         manubutton.setOnClickListener(this);
 
+        FloatingActionButton chrisbutton = (FloatingActionButton)view.findViewById(R.id.fab1);
+        chrisbutton.setOnClickListener(this);
+        FloatingActionButton lawrencebutton = (FloatingActionButton)view.findViewById(R.id.fab2);
+        lawrencebutton.setOnClickListener(this);
         return view;
     }
 
@@ -50,12 +51,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;
-/*
-            case R.id.fab3:
-                String chrisNumber = getResources().getString(R.string.chris_number);
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+chrisNumber));
-                break;
-*/
+
             case R.id.autocheck:
                 intent = new Intent(getActivity(), AutoActivity.class);
                 startActivity(intent);
