@@ -53,6 +53,7 @@
     <string name="splash_hak">HEAKEME WILLIAMS</string>
 
     <string name="menu_welcome">WELCOME</string>
+    <string name="menu_name">Sample Name</string>
     <string name="menu_serial">SERIAL ID:</string>
     <string name="guest_name">Guest</string>
 
@@ -87,7 +88,6 @@
     <string name="drawerContent">drawerContent</string>
 
     <string name="action_call">Call Chris</string>
-    <string name="chris_number">4165263057</string>
     <string name="pirover">PiRover</string>
     <string name="about">About</string>
     <string name="developers">Developers</string>
@@ -98,7 +98,7 @@
 
     <string name="alert_yes">Yes</string>
     <string name="alert_no">No</string>
-    <string name="alert_message">Are you sure you want to Exit?</string>
+    <string name="alert_message">Are you sure you want to exit?</string>
 
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>

@@ -129,9 +129,9 @@ public class NavigationDrawer extends AppCompatActivity {
     }
 
     public void dialog(){
-        new AlertDialog.Builder(this)
-                .setTitle("Exit")
-                .setMessage("Do you really want to exit?")
+        new AlertDialog.Builder(this, R.style.ThemeDialogCustom)
+                .setTitle("Logout")
+                .setMessage("Are you logging out?")
                 .setNegativeButton("No",null)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){

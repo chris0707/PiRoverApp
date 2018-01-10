@@ -1,82 +1,120 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/blackmetal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/autocheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/auto" />
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="152dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/fab_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/manualcheck"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:background="@color/BrownShade"
+            android:text="@string/manual"
+            tools:layout_editor_absoluteX="230dp"
+            tools:layout_editor_absoluteY="224dp" />
+
+        <Button
+            android:id="@+id/autocheck"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/BrownShade"
+            android:text="@string/auto"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="224dp" />
+    </TableRow>
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:fab_colorNormal="#DA4336"
+        fab:fab_colorPressed="#E75043"
+        fab:fab_colorRipple="#99FFFFFF"
+        fab:fab_shadowColor="#66000000"
+        fab:fab_showShadow="true"
+        fab:menu_fab_label="@string/devs"
+        fab:menu_labels_colorNormal="#333333"
+        fab:menu_labels_colorPressed="#444444"
+        fab:menu_labels_colorRipple="#66FFFFFF"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="true"
+        fab:menu_openDirection="up">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/manual" />
+            android:src="@android:drawable/ic_dialog_info"
+            fab:fab_label="@string/site_chris"
+            fab:fab_size="mini" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <com.github.clans.fab.FloatingActionMenu
-            android:id="@+id/fab_menu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_weight="1"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
-
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            fab:fab_colorNormal="#DA4336"
-            fab:fab_colorPressed="#E75043"
-            fab:fab_colorRipple="#99FFFFFF"
-            fab:fab_shadowColor="#66000000"
-            fab:fab_showShadow="true"
-            fab:menu_fab_label="@string/devs"
-            fab:menu_labels_colorNormal="#333333"
-            fab:menu_labels_colorPressed="#444444"
-            fab:menu_labels_colorRipple="#66FFFFFF"
-            fab:menu_labels_ellipsize="end"
-            fab:menu_labels_maxLines="-1"
-            fab:menu_labels_position="left"
-            fab:menu_labels_showShadow="true"
-            fab:menu_labels_singleLine="true"
-            fab:menu_openDirection="up">
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/fab1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_dialog_info"
-                fab:fab_label="@string/site_chris"
-                fab:fab_size="mini" />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/fab2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_dialog_info"
-                fab:fab_label="@string/site_lawrence"
-                fab:fab_size="mini" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_info"
+            fab:fab_label="@string/site_lawrence"
+            fab:fab_size="mini" />
 
 
-        </com.github.clans.fab.FloatingActionMenu>
+    </com.github.clans.fab.FloatingActionMenu>
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/menu_welcome"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_name"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+
+</android.support.constraint.ConstraintLayout>
