@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -16,10 +17,9 @@ import com.github.clans.fab.FloatingActionMenu;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
 
-    Intent intent;
-    View view;
+    Intent intent, retrieveIntent;
     Uri uri;
-
+    TextView textName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,10 +30,22 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Button manubutton = (Button) view.findViewById(R.id.manualcheck);
         manubutton.setOnClickListener(this);
 
+        textName = view.findViewById(R.id.tvName);
+
         FloatingActionButton chrisbutton = (FloatingActionButton)view.findViewById(R.id.fab1);
         chrisbutton.setOnClickListener(this);
         FloatingActionButton lawrencebutton = (FloatingActionButton)view.findViewById(R.id.fab2);
         lawrencebutton.setOnClickListener(this);
+
+        retrieveIntent = getActivity().getIntent();
+
+        String name1 = retrieveIntent.getStringExtra("name");
+        textName.setText(name1);
+
+
+
+
+
         return view;
     }
 
