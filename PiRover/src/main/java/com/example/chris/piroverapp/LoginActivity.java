@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String guestName = getResources().getString(R.string.guest_name);
                 String guestSerial = getResources().getString(R.string.register_serialButton1);
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, NavigationDrawer.class);
                 intent.putExtra("name", guestName);
                 intent.putExtra("content", guestSerial);
                 startActivity(intent);
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String name = jsonResponse.getString("name");
                                 String content = jsonResponse.getString("content");
 
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, NavigationDrawer.class);
 
                                 intent.putExtra("name", name);
                                 intent.putExtra("username", username);

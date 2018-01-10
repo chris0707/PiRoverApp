@@ -1,128 +1,154 @@
 package com.example.chris.piroverapp;
 
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-import org.w3c.dom.Text;
+public class NavigationDrawer extends AppCompatActivity {
 
-public class NavigationDrawer extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
-    TextView drawerContent;
+    private String[] mNavigationDrawerItemTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    Toolbar toolbar;
+    private CharSequence mDrawerTitle;
+    private CharSequence mTitle;
+    android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation_drawer);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.navigation_drawer);
+        mTitle = mDrawerTitle = getTitle();
+        mNavigationDrawerItemTitles= getResources().getStringArray(R.array.navigation_drawer_items_array);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
+        MainFragment home = new MainFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.content_frame, home);
+        fragmentTransaction.commit();
 
+        setupToolbar();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DataModel[] drawerItem = new DataModel[1];
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        drawerItem[0] = new DataModel(R.drawable.logo, "Home");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setBackgroundColor(getResources().getColor(R.color.BrownShade));
+        DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.list_view_item_row, drawerItem);
+        mDrawerList.setAdapter(adapter);
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        setupDrawerToggle();
+
     }
 
-    @Override
-    public void onBackPressed() {
-      /*  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+
+        }
+
+    }
+
+    private void selectItem(int position) {
+
+        Fragment fragment = null;
+        switch (position) {
+            case 0:
+                fragment = new MainFragment();
+                break;
+
+            default:
+                fragment = new MainFragment();
+                break;
+        }
+
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+            mDrawerList.setItemChecked(position, true);
+            mDrawerList.setSelection(position);
+            setTitle(mNavigationDrawerItemTitles[position]);
+            mDrawerLayout.closeDrawer(mDrawerList);
+
         } else {
-            super.onBackPressed();
-        }*/
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(false);
-        builder.setMessage("Are you sure you want to Exit?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation_drawer, menu);
-        drawerContent = (TextView)findViewById(R.id.drawerContent);
-        drawerContent.setText("This is a prototype project that is inspired by NASA’s own rover. It can be used for research purposes due to its small body and mobile features. In the future we hope to create an even smaller type rover that will be just as mobile, but will also have new features such as; gathering raw materials and even being fully automatic. This prototype will have three different on settings; automatic, manual and a pattern mode for testing. It will run off of a Raspberry Pi database that includes pre-registered codes and will be activated via Bluetooth from a mobile device software.");
-        return true;
+            Log.e("MainActivity", "Error in creating fragment");
+        }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+    public void setTitle(CharSequence title) {
+        mTitle = title;
+        getSupportActionBar().setTitle(mTitle);
+    }
 
-        int id = item.getItemId();
-
-
-
-        if (id == R.id.menuAbout) {
-
-            drawerContent = (TextView)findViewById(R.id.drawerContent);
-            drawerContent.setText(getResources().getString(R.string.menuAbout));
-        } else if (id == R.id.menuDevelopers) {
-            drawerContent = (TextView)findViewById(R.id.drawerContent);
-            drawerContent.setText(getResources().getString(R.string.menuDevelopers));
-        } else if (id == R.id.menuMore) {
-            drawerContent = (TextView)findViewById(R.id.drawerContent);
-            drawerContent.setText(getResources().getString(R.string.menuMore));
-        }
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
 
 
+    @Override
+    public void onBackPressed(){
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            dialog();
+        }
+    }
+
+    public void dialog(){
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Do you really want to exit?")
+                .setNegativeButton("No",null)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which){
+                        NavigationDrawer.super.onBackPressed();
+                    }
+                }).create().show();
+    }
+
+    void setupToolbar(){
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    void setupDrawerToggle(){
+        mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
+        //This is necessary to change the icon of the Drawer Toggle upon state change.
+        mDrawerToggle.syncState();
     }
 }

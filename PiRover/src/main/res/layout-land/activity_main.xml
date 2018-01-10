@@ -89,14 +89,14 @@
         tools:layout_constraintLeft_creator="1" />
 
     <Button
-        android:id="@+id/automaticbutt"
+        android:id="@+id/autocheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/BrownShade"
-        app:layout_constraintEnd_toStartOf="@+id/manualconf"
+        app:layout_constraintEnd_toStartOf="@+id/manualcheck"
         app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
@@ -104,7 +104,7 @@
         tools:layout_constraintLeft_creator="1" />
 
     <Button
-        android:id="@+id/manualconf"
+        android:id="@+id/manualcheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="188dp"
@@ -128,7 +128,7 @@
         app:layout_constraintEnd_toStartOf="@+id/manualText"
         app:layout_constraintHorizontal_bias="0.591"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/automaticbutt"
+        app:layout_constraintTop_toBottomOf="@+id/autocheck"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
@@ -143,7 +143,7 @@
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manualconf"
+        app:layout_constraintTop_toBottomOf="@+id/manualcheck"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1" />
 

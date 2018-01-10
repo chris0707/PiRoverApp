@@ -4,9 +4,7 @@ package com.example.chris.piroverapp;
  */
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -20,12 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.github.clans.fab.FloatingActionMenu;
-
-import org.w3c.dom.Text;
-
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -111,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        automaticconf = (Button)findViewById(R.id.automaticbutt);
+        automaticconf = (Button)findViewById(R.id.autocheck);
         automaticconf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        manualconf = (Button)findViewById(R.id.manualconf);
+        manualconf = (Button)findViewById(R.id.manualcheck);
         manualconf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
