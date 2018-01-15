@@ -42,9 +42,10 @@ public class NavigationDrawer extends AppCompatActivity {
 
         setupToolbar();
 
-        DataModel[] drawerItem = new DataModel[1];
+        DataModel[] drawerItem = new DataModel[2];
 
         drawerItem[0] = new DataModel(R.drawable.logo, "Home");
+        drawerItem[1] = new DataModel(R.drawable.logo, "Settings");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -55,6 +56,10 @@ public class NavigationDrawer extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         setupDrawerToggle();
+
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+        tx.replace(R.id.content_frame, new MainFragment());
+        tx.commit();
 
     }
 
@@ -75,9 +80,12 @@ public class NavigationDrawer extends AppCompatActivity {
             case 0:
                 fragment = new MainFragment();
                 break;
+            case  1:
+                fragment = new SettingsFragment();
+                break;
 
             default:
-                fragment = new MainFragment();
+
                 break;
         }
 

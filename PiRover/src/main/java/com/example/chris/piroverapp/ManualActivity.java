@@ -65,31 +65,9 @@ public class ManualActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
 
         dc = (Button) findViewById(R.id.buttonDc);
         final Button connect = (Button) findViewById(R.id.buttonBlue);
-
-
-        SharedPreferences prefs = getSharedPreferences("bgColour", MODE_PRIVATE);
-        colour = prefs.getString("colour", "WHITE");
-
-        cons = (ConstraintLayout)findViewById(R.id.constraint);
-        if(colour.equals("GREEN")){
-            cons.setBackgroundColor(Color.GREEN);
-        }
-        else if(colour.equals("YELLOW")){
-            cons.setBackgroundColor(Color.YELLOW);
-        }
-        else if(colour.equals("BLUE")){
-            cons.setBackgroundColor(Color.BLUE);
-        }
-
-
-
-
-
 
 
         connect.setOnClickListener(new View.OnClickListener() {
@@ -283,75 +261,7 @@ public class ManualActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.actionbarmenu,menu);
 
-        return true;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        SharedPreferences prefs = getSharedPreferences("bgColour", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        String colourSelected = "";
-
-
-
-        //cons = (ConstraintLayout)findViewById(R.id.constraint);
-        switch (item.getItemId()) {
-
-            case R.id.barGreen:
-                cons.setBackgroundColor(Color.GREEN);
-                colourSelected = "GREEN";
-                editor.putString("colour", colourSelected);
-                editor.commit();
-
-                return true;
-            case R.id.barYellow:
-                cons.setBackgroundColor(Color.YELLOW);
-                colourSelected = "YELLOW";
-                editor.putString("colour", colourSelected);
-                editor.commit();
-                return true;
-            case R.id.barBlue:
-                cons.setBackgroundColor(Color.BLUE);
-                colourSelected = "BLUE";
-                editor.putString("colour", colourSelected);
-                editor.commit();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-    }
-
-   /* SharedPreferences prefs = getSharedPreferences("bgColour", MODE_PRIVATE);
-    SharedPreferences.Editor editor = prefs.edit();
-    String colourSelected = "";
-
-
-    private void greenBar() {
-        colourSelected = "GREEN";
-        editor.putString("colour", colourSelected);
-        editor.commit();
-    }
-
-    private void yellowBar() {
-
-        colourSelected = "YELLOW";
-        editor.putString("colour", colourSelected);
-        editor.commit();
-    }
-
-    private void blueBar() {
-        colourSelected = "BLUE";
-        editor.putString("colour", colourSelected);
-        editor.commit();
-    }*/
 
     public static boolean isBluetoothAvailable() {
         final BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();

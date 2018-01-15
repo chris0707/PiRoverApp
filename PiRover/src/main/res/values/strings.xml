@@ -102,6 +102,34 @@
 
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
+        <item>Settings</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_title">SETTINGS</string>
+    <string name="settings_brightTitle">Adjust Screen Brightness</string>
+
+    <string name="audio_pref">audio</string>
+    <string name="audio_stringpref">SOUND</string>
+    <string name="audio_name">audioMusic</string>
+    <string name="audio_check">CHECKED</string>
+    <string name="audio_unchecked">UNCHECKED</string>
+
+
+    <string name="frag_blue">Blue</string>
+    <string name="frag_green">Green</string>
+    <string name="frag_yellow">Yellow</string>
+    <string name="settings_colorRadio">Change Setting\'\s Background Color</string>
+    <string name="settings_saveButton">SAVE</string>
+    <string name="settings_brightnessProg">bright</string>
+    <string name="frag_toggleOn">Mute/Vibrate ON</string>
+    <string name="frag_toggleOff">Mute/Vibrate OFF</string>
+    <string name="settings_audioTitle">Mute/Vibrate toggle</string>
+
+    <string name="bright_name">bright</string>
+    <string name="bright_pref">brightnessPref</string>
+    <string name="bright_stringpref">HIGH</string>
+    <string name="frag_saveToast">Settings Saved</string>
 
 </resources>
