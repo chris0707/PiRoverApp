@@ -54,8 +54,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(name.isEmpty() || username.isEmpty() || password.isEmpty() ||content.isEmpty() || confirmP.isEmpty()){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
-                    builder.setMessage("Register Failed.")
-                            .setNegativeButton("Retry", null)
+                    builder.setMessage(R.string.Reg_Activity_set_message)
+                            .setNegativeButton(R.string.set_negative, null)
                             .create()
                             .show();
 
@@ -80,8 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
                             } else{
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
-                                builder.setMessage("Register Failed")
-                                        .setNegativeButton("Retry", null)
+                                builder.setMessage(R.string.Reg_Activity_set_message)
+                                        .setNegativeButton(R.string.set_negative, null)
                                         .create()
                                         .show();
 
@@ -104,8 +104,8 @@ public class RegisterActivity extends AppCompatActivity {
                 else{
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this, R.style.ThemeDialogCustom);
-                    builder.setMessage("Register Failed. Password does not match")
-                            .setNegativeButton("Retry", null)
+                    builder.setMessage(R.string.Reg_Activity_set_reason)
+                            .setNegativeButton(R.string.set_negative, null)
                             .create()
                             .show();
 

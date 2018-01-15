@@ -3,6 +3,21 @@
     <string name="app_title">PiRover</string>
     <string name="title_activity_login">Sign in</string>
     <string name="app_titleMenu">Options Control</string>
+
+    <!-- LoginActivity -->
+    <string name="set_message">Login Failed.</string>
+    <string name="set_negative">Retry</string>
+
+    <!-- NavigationDrawer -->
+    <string name="set_title">Logout</string>
+    <string name="Nav_set_message">Are you logging out?</string>
+    <string name="Nav_set_negative">N0</string>
+    <string name="Nav_set_positive">Yes</string>
+
+    <!-- NavigationDrawer -->
+    <string name="Reg_Activity_set_message">Registration Failed.</string>
+    <string name="Reg_Activity_set_reason">Registration Failed. Passwords Do Not Match.</string>
+
     <!-- Strings related to login -->
 
     <string name="exit">Exit</string>
@@ -60,6 +75,9 @@
     <!-- AutoControl -->
     <string name="startButton">AutoMap</string>
     <string name="stopButton">Stop</string>
+
+    <!-- Manual Activity -->
+    <string name="PiRovers">PiRover</string>
 
     <!-- Commands -->
     <string name="forward">w</string>

@@ -138,10 +138,10 @@ public class NavigationDrawer extends AppCompatActivity {
 
     public void dialog(){
         new AlertDialog.Builder(this, R.style.ThemeDialogCustom)
-                .setTitle("Logout")
-                .setMessage("Are you logging out?")
-                .setNegativeButton("No",null)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                .setTitle(R.string.set_title)
+                .setMessage(R.string.Nav_set_message)
+                .setNegativeButton(R.string.Nav_set_negative,null)
+                .setPositiveButton(R.string.Nav_set_positive, new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){
                         NavigationDrawer.super.onBackPressed();
                     }

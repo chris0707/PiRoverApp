@@ -150,7 +150,7 @@
             android:id="@+id/textView1"
             android:layout_width="140dp"
             android:layout_height="match_parent"
-            android:text="PiRover"
+            android:text="@string/PiRovers"
             android:textAlignment="center"
             android:textColor="@color/BrownShade"
             android:textSize="30sp"
