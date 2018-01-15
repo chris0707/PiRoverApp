@@ -17,7 +17,7 @@ import com.github.clans.fab.FloatingActionMenu;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
 
-    Intent intent, retrieveIntent;
+    Intent intent, intent2, retrieveIntent;
     Uri uri;
     TextView textName;
 
@@ -36,6 +36,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         chrisbutton.setOnClickListener(this);
         FloatingActionButton lawrencebutton = (FloatingActionButton)view.findViewById(R.id.fab2);
         lawrencebutton.setOnClickListener(this);
+        FloatingActionButton heakemebutton = (FloatingActionButton)view.findViewById(R.id.fab3);
+        heakemebutton.setOnClickListener(this);
 
         retrieveIntent = getActivity().getIntent();
 
@@ -60,6 +62,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
             case R.id.fab2:
                 uri = Uri.parse("https://github.com/n01033296");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                break;
+
+            case R.id.fab3:
+                uri = Uri.parse("https://github.com/TheKeme");
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;

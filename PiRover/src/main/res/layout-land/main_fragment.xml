@@ -82,6 +82,15 @@
             fab:fab_label="@string/site_lawrence"
             fab:fab_size="mini" />
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_info"
+            fab:fab_label="@string/site_heakeme"
+            fab:fab_size="mini" />
+
+
 
     </com.github.clans.fab.FloatingActionMenu>
 

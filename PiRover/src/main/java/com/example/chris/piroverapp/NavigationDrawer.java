@@ -44,8 +44,8 @@ public class NavigationDrawer extends AppCompatActivity {
 
         DataModel[] drawerItem = new DataModel[2];
 
-        drawerItem[0] = new DataModel(R.drawable.logo, "Home");
-        drawerItem[1] = new DataModel(R.drawable.logo, "Settings");
+        drawerItem[0] = new DataModel(R.mipmap.homefrag, getResources().getString(R.string.drawer_Home));
+        drawerItem[1] = new DataModel(R.mipmap.setttingsfrag, getResources().getString(R.string.drawer_Settings));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -99,7 +99,7 @@ public class NavigationDrawer extends AppCompatActivity {
             mDrawerLayout.closeDrawer(mDrawerList);
 
         } else {
-            Log.e("MainActivity", "Error in creating fragment");
+            Log.e("main", "Error in creating fragment");
         }
     }
 

@@ -53,8 +53,8 @@ public class LoginActivity extends AppCompatActivity {
                 String guestName = getResources().getString(R.string.guest_name);
                 String guestSerial = getResources().getString(R.string.register_serialButton1);
                 Intent intent = new Intent(LoginActivity.this, NavigationDrawer.class);
-                intent.putExtra("name", guestName);
-                intent.putExtra("content", guestSerial);
+                intent.putExtra(getResources().getString(R.string.intent_putName), guestName);
+                intent.putExtra(getResources().getString(R.string.intent_putContent), guestSerial);
                 startActivity(intent);
             }
         });
@@ -79,17 +79,17 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try{
                             JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
+                            boolean success = jsonResponse.getBoolean(getResources().getString(R.string.intent_putSuccess));
 
                             if(success){
-                                String name = jsonResponse.getString("name");
-                                String content = jsonResponse.getString("content");
+                                String name = jsonResponse.getString(getResources().getString(R.string.intent_putName));
+                                String content = jsonResponse.getString(getResources().getString(R.string.intent_putContent));
 
                                 Intent intent = new Intent(LoginActivity.this, NavigationDrawer.class);
 
-                                intent.putExtra("name", name);
-                                intent.putExtra("username", username);
-                                intent.putExtra("content", content);
+                                intent.putExtra(getResources().getString(R.string.intent_putName), name);
+                                intent.putExtra(getResources().getString(R.string.intent_putUsername), username);
+                                intent.putExtra(getResources().getString(R.string.intent_putContent), content);
 
                                 LoginActivity.this.startActivity(intent);
 

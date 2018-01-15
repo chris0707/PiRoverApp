@@ -91,6 +91,7 @@
     <!-- FloatFunctions -->
     <string name="site_chris">Visit Chris\' GitHub</string>
     <string name="site_lawrence">Visit Lawrence\'s Github</string>
+    <string name="site_heakeme">Visit Heakeme\'s Github</string>
     <string name="devs">Developers</string>
 
     <string name="color_green">GREEN</string>
@@ -149,5 +150,25 @@
     <string name="bright_pref">brightnessPref</string>
     <string name="bright_stringpref">HIGH</string>
     <string name="frag_saveToast">Settings Saved</string>
+
+
+
+    <string name="intent_putName">name</string>
+    <string name="intent_putContent">content</string>
+    <string name="intent_putUsername">username</string>
+    <string name="intent_putSuccess">success</string>
+
+    <string name="login_requestURL">"http://thebarebarzz.xyz/LoginPi.php"</string>
+
+    <string name="main_urlChris">"https://github.com/chris0707"</string>
+    <string name="main_urlLaw">"https://github.com/n01033296"</string>
+    <string name="main_urlHeakeme">"https://github.com/TheKeme"</string>
+
+    <string name="drawer_Home">Home</string>
+    <string name="drawer_Settings">Settings</string>
+
+    <string name="toast_autoMap">Device not yet connected. Please connect</string>
+    <string name="toast_autoStop">No connection available.</string>
+
 
 </resources>
