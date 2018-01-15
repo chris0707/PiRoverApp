@@ -100,6 +100,8 @@ AutoActivity extends AppCompatActivity {
                 if(connected){
                     String start = getString(R.string.startAuto);
                     sendMsg(start);
+                } else{
+                    Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoMap), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -110,6 +112,8 @@ AutoActivity extends AppCompatActivity {
                 if(connected){
                     String stop = getString(R.string.stopAuto);
                     sendMsg(stop);
+                }else{
+                    Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoStop), Toast.LENGTH_SHORT).show();
                 }
             }
         });
