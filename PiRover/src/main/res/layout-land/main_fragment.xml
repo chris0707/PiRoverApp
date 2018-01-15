@@ -5,49 +5,47 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blackmetal"
     android:orientation="vertical"
-    android:background="@drawable/blackmetal">
+    tools:layout_editor_absoluteY="25dp">
 
 
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/manualcheck"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fab_menu"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/BrownShade"
+        android:text="@string/manual"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-        <Button
-            android:id="@+id/manualcheck"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
-            android:background="@color/BrownShade"
-            android:text="@string/manual"
-            tools:layout_editor_absoluteX="230dp"
-            tools:layout_editor_absoluteY="224dp" />
-
-        <Button
-            android:id="@+id/autocheck"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@color/BrownShade"
-            android:text="@string/auto"
-            tools:layout_editor_absoluteX="104dp"
-            tools:layout_editor_absoluteY="224dp" />
-    </TableRow>
+    <Button
+        android:id="@+id/autocheck"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/BrownShade"
+        android:text="@string/auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manualcheck" />
 
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="174dp"
 
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:paddingBottom="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,11 +91,12 @@
         android:layout_height="37dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="52dp"
         android:text="@string/menu_welcome"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

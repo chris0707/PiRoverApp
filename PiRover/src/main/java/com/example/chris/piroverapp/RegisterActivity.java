@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText editUser = (EditText)findViewById(R.id.editUser);
         final EditText editPass = (EditText)findViewById(R.id.editPassword);
         confirmPassword = (EditText) findViewById(R.id.editConfirm);
-        text1 =(TextView)findViewById(R.id.textView6);
 
 
         registerB.setOnClickListener(new View.OnClickListener() {
