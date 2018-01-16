@@ -9,7 +9,6 @@
     <string name="set_negative">Retry</string>
 
     <!-- NavigationDrawer -->
-    <string name="set_title">Logout</string>
     <string name="Nav_set_message">Are you logging out?</string>
     <string name="Nav_set_negative">N0</string>
     <string name="Nav_set_positive">Yes</string>
@@ -68,7 +67,6 @@
     <string name="splash_hak">HEAKEME WILLIAMS</string>
 
     <string name="menu_welcome">WELCOME</string>
-    <string name="menu_name">Sample Name</string>
     <string name="menu_serial">SERIAL ID:</string>
     <string name="guest_name">Guest</string>
 
@@ -169,6 +167,8 @@
 
     <string name="toast_autoMap">Device not yet connected. Please connect</string>
     <string name="toast_autoStop">No connection available.</string>
+    <string name="set_title">Logout</string>
+    <string name="menu_name">Sample Name</string>
 
 
 </resources>
