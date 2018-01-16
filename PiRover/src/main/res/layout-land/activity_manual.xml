@@ -5,7 +5,7 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chris.piroverapp.ManualActivity"
+    tools:context="pirover.pinivea.chris.piroverapp.ManualActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="25dp">
     <!-- android:background="@drawable/background3" -->

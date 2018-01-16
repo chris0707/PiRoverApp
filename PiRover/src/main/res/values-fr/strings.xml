@@ -71,7 +71,7 @@
     <string name="AboutTextView">Sur</string>
     <string name="drawerContent">drawerContent</string>
     <string name="action_call">Appelez Chris</string>
-    <string name="chris_number">4165263057</string>
+
     <string name="pirover">PiRover</string>
     <string name="about">Sur</string>
     <string name="developers">Développeurs</string>
@@ -121,7 +121,7 @@
     <string name="intent_putContent">contenu</string>
     <string name="intent_putUsername">Nom d\'utilisateur</string>
     <string name="intent_putSuccess">Succès</string>
-    <string name="drawer_Home">" maison"</string>
+    <string name="drawer_Home">Accueil</string>
     <string name="drawer_Settings">Paramètres</string>
     <string name="toast_autoMap">L\'appareil n\'est pas encore connecté. Connectez-vous s\'il vous plaît</string>
     <string name="toast_autoStop">Aucune connexion disponible</string>
@@ -129,5 +129,10 @@
     <string name="main_urlChris">https://github.com/chris0707</string>
     <string name="main_urlLaw">https://github.com/n01033296</string>
     <string name="main_urlHeakeme">https://github.com/TheKeme</string>
+
+    <string-array name="navigation_drawer_items_array">
+        <item>Accueil</item>
+        <item>Parametres</item>
+    </string-array>
 
 </resources>

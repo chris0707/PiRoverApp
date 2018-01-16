@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 /*PiNivea
 *Christopher Albarillo N01076336
 *Lawrence Puig N01033296
@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.chris.piroverapp.R;
 import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
 
 
 public class MainFragment extends Fragment implements View.OnClickListener {

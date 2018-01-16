@@ -1,32 +1,20 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 /*PiNivea
 *Christopher Albarillo N01076336
 *Lawrence Puig N01033296
 *Heakeme Williams N01126779
  */
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.media.Image;
-import android.net.Uri;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.chris.piroverapp.R;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,15 +22,11 @@ import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
 
-
 import static java.lang.System.exit;
 
-public class ManualActivity extends AppCompatActivity {
+public class
+AutoActivity extends AppCompatActivity {
     private android.os.Handler handler = new android.os.Handler();
-
-    ImageButton forwardButton, reverseButton, leftButton, rightButton;
-    Button dc;
-
 
     BluetoothAdapter blueAdapter;
     BluetoothSocket blueSocket;
@@ -51,31 +35,32 @@ public class ManualActivity extends AppCompatActivity {
     OutputStream outputStream;
     InputStream inputStream;
 
+
+    Button toggleButton;
+    Button connect, dc, startB, stopB;
+    Boolean check = Boolean.FALSE;
+
+
+
     String a;
     String message="";
-    String colour;
     boolean connected;
     boolean runThreadRunning = false;
     boolean runThreadStop = false;
-    ConstraintLayout cons;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manual);
+        setContentView(R.layout.activity_auto);
 
-
-        dc = (Button) findViewById(R.id.buttonDc);
-        final Button connect = (Button) findViewById(R.id.buttonBlue);
-
+        connect = (Button)findViewById(R.id.buttonBlue);
+        dc = (Button)findViewById(R.id.buttonDc);
+        startB =(Button)findViewById(R.id.startButton);
+        stopB = (Button)findViewById(R.id.stopButton);
 
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 //a = "raspberrypi";
                 a = getString(R.string.raspberrypiID);
                 try {
@@ -93,21 +78,19 @@ public class ManualActivity extends AppCompatActivity {
                         Toast.makeText(getBaseContext(), R.string.bluetoothelse, Toast.LENGTH_SHORT).show();
                     }
                 }catch (NullPointerException e){
-                   e.printStackTrace();
+                    e.printStackTrace();
                     Toast.makeText(getBaseContext(), R.string.noconnection, Toast.LENGTH_SHORT).show();
 
                 }
-
-
             }
         });
-
 
         dc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (connected) {
                     Toast.makeText(getBaseContext(), R.string.closing, Toast.LENGTH_SHORT).show();
+                    //sendMsg("stop");
                     String stop = getString(R.string.stopButton);
                     sendMsg(stop);
                     exit(0);
@@ -120,155 +103,67 @@ public class ManualActivity extends AppCompatActivity {
             }
         });
 
-
-        forwardButton = (ImageButton) findViewById(R.id.forwardButton);
-        forwardButton.setOnTouchListener(new View.OnTouchListener() {
+        startB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+            public void onClick(View view) {
                 if(connected){
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN: {
-                        String w = getString(R.string.forward);
+                    String start = getString(R.string.startAuto);
+                    sendMsg(start);
+                } else{
+                    Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoMap), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-                        handleRunDown(w);
-                        return true;
+        stopB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(connected){
+                    String stop = getString(R.string.stopAuto);
+                    sendMsg(stop);
+                }else{
+                    Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoStop), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+        /*toggleButton = (Button)findViewById(R.id.toggleButton);
+        toggleButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if (check == Boolean.FALSE) {
+                    if(connected) {
+                        int duration = Toast.LENGTH_SHORT;
+                        Context context = getApplicationContext();
+                        CharSequence text = "Automode: ON";
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+
+                        sendMsg("automap");
+
+
+                        check = Boolean.TRUE;
                     }
-                    case MotionEvent.ACTION_UP: {
-                        handleRunUp();
-                        return true;
+                }
+
+                else {
+                    if(connected) {
+                        Context context = getApplicationContext();
+                        int duration = Toast.LENGTH_SHORT;
+                        CharSequence text = "Automode: OFF";
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+
+                        sendMsg("stop");
+
+                        check = Boolean.FALSE;
                     }
-                }}
 
-                return false;
-            }
-
-        });
-
-
-        /*forwardButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(connected)
-                    sendMsg("w");
-
-                int duration = Toast.LENGTH_SHORT;
-                Context context = getApplicationContext();
-                int text = R.string.m_forward;
-                Toast toast = Toast.makeText(context,text,duration);
-                //toast.show();
-            }
-        }); */
-
-        reverseButton = (ImageButton) findViewById(R.id.reverseButton);
-        reverseButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(connected){
-                    switch (motionEvent.getAction()) {
-                        case MotionEvent.ACTION_DOWN: {
-
-                            String s = getString(R.string.reverse);
-
-                            handleRunDown(s);
-                            return true;
-                        }
-                        case MotionEvent.ACTION_UP: {
-                            handleRunUp();
-                            return true;
-                        }
-                    }}
-
-                return false;
-            }
-
-        });
-       /* reverseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (connected)
-                    sendMsg("s");
-                int duration = Toast.LENGTH_SHORT;
-                Context context = getApplicationContext();
-                int text = R.string.m_reverse;
-                Toast toast = Toast.makeText(context, text, duration);
-                //toast.show();
+                }
             }
         });*/
-
-        leftButton = (ImageButton) findViewById(R.id.leftButton);
-        leftButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(connected){
-                    switch (motionEvent.getAction()) {
-                        case MotionEvent.ACTION_DOWN: {
-
-                            String a = getString(R.string.left);
-
-                            handleRunDown(a);
-                            return true;
-                        }
-                        case MotionEvent.ACTION_UP: {
-                            handleRunUp();
-                            return true;
-                        }
-                    }}
-
-                return false;
-            }
-
-        });
-       /* leftButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (connected)
-                    sendMsg("a");
-                int duration = Toast.LENGTH_SHORT;
-                Context context = getApplicationContext();
-                int text = R.string.m_left;
-                Toast toast = Toast.makeText(context, text, duration);
-                //toast.show();
-            }
-        });*/
-
-        rightButton = (ImageButton) findViewById(R.id.rightButton);
-        rightButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(connected){
-                    switch (motionEvent.getAction()) {
-                        case MotionEvent.ACTION_DOWN: {
-
-                            String d = getString(R.string.right);
-
-                            handleRunDown(d);
-                            return true;
-                        }
-                        case MotionEvent.ACTION_UP: {
-                            handleRunUp();
-                            return true;
-                        }
-                    }}
-
-                return false;
-            }
-
-        });
-      /* rightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (connected)
-                    sendMsg("d");
-                int duration = Toast.LENGTH_SHORT;
-                Context context = getApplicationContext();
-                int text = R.string.m_right;
-                Toast toast = Toast.makeText(context, text, duration);
-                //toast.show();
-            }
-        });*/
-
     }
-
 
 
     public static boolean isBluetoothAvailable() {
@@ -304,8 +199,9 @@ public class ManualActivity extends AppCompatActivity {
             }
 
         }
-        String serial = getString(R.string.register_serialButton1);
+
         //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        String serial = getString(R.string.register_serialButton1);
         UUID uuid = UUID.fromString(serial);
 
         blueSocket = blueDevice.createRfcommSocketToServiceRecord(uuid);
@@ -374,9 +270,4 @@ public class ManualActivity extends AppCompatActivity {
         runThreadStop = true;
     }
 
-   /* private void keepSending(String message){
-        sendMsg(message);
-    }*/
-
 }
-

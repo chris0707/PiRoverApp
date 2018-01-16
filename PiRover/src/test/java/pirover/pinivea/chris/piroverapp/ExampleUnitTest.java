@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 
 /*PiNivea
 *Christopher Albarillo N01076336
@@ -23,6 +23,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.example.chris.piroverapp.R;
 
 
 /**

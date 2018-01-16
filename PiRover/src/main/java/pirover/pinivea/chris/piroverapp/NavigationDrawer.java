@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 /*PiNivea
 *Christopher Albarillo N01076336
 *Lawrence Puig N01033296
@@ -19,6 +19,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.chris.piroverapp.R;
 
 public class NavigationDrawer extends AppCompatActivity {
 
