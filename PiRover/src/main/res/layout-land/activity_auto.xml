@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blackmetal"
-    tools:context="com.example.chris.piroverapp.AutoActivity"
+    tools:context="pirover.pinivea.chris.piroverapp.AutoActivity"
     tools:layout_editor_absoluteY="25dp">
 
     <TableRow

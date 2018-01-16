@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 /*PiNivea
 *Christopher Albarillo N01076336
 *Lawrence Puig N01033296
@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.chris.piroverapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

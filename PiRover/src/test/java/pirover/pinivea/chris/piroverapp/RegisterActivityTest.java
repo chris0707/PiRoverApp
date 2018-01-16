@@ -1,8 +1,6 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Chris on 2018-01-15.

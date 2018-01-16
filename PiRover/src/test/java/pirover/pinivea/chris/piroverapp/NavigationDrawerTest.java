@@ -1,10 +1,6 @@
-package com.example.chris.piroverapp;
-
-import android.view.MenuItem;
+package pirover.pinivea.chris.piroverapp;
 
 import org.junit.Test;
-
-import java.util.Map;
 
 import static org.junit.Assert.*;
 

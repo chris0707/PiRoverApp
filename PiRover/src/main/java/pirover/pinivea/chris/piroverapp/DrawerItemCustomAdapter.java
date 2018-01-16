@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 
 /*PiNivea
 *Christopher Albarillo N01076336
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.chris.piroverapp.R;
 
 public class DrawerItemCustomAdapter extends ArrayAdapter<DataModel> {
 

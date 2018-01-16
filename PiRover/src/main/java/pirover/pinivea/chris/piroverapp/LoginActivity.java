@@ -1,4 +1,4 @@
-package com.example.chris.piroverapp;
+package pirover.pinivea.chris.piroverapp;
 /*PiNivea
 *Christopher Albarillo N01076336
 *Lawrence Puig N01033296
@@ -6,8 +6,6 @@ package com.example.chris.piroverapp;
  */
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +17,7 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.chris.piroverapp.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
