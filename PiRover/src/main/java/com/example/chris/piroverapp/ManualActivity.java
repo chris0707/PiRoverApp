@@ -78,18 +78,24 @@ public class ManualActivity extends AppCompatActivity {
 
                 //a = "raspberrypi";
                 a = getString(R.string.raspberrypiID);
-                if (isBluetoothAvailable()) {
-                    try {
-                        findBT();
-                        Toast.makeText(getBaseContext(), R.string.trying, Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        Toast.makeText(getBaseContext(), R.string.notestablished, Toast.LENGTH_SHORT).show();
-                        e.printStackTrace();
+                try {
+                    if (isBluetoothAvailable()) {
+                        try {
+                            findBT();
+                            Toast.makeText(getBaseContext(), R.string.trying, Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            Toast.makeText(getBaseContext(), R.string.notestablished, Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                        Toast.makeText(getBaseContext(), R.string.connected, Toast.LENGTH_SHORT).show();
+                        connected = true;
+                    } else {
+                        Toast.makeText(getBaseContext(), R.string.bluetoothelse, Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(getBaseContext(), R.string.connected, Toast.LENGTH_SHORT).show();
-                    connected = true;
-                } else {
-                    Toast.makeText(getBaseContext(), R.string.bluetoothelse, Toast.LENGTH_SHORT).show();
+                }catch (NullPointerException e){
+                   e.printStackTrace();
+                    Toast.makeText(getBaseContext(), R.string.noconnection, Toast.LENGTH_SHORT).show();
+
                 }
 
 
