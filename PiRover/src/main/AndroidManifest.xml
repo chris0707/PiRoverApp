@@ -15,7 +15,6 @@
         android:label="@string/app_title"
         android:roundIcon="@mipmap/mainicon2"
         android:supportsRtl="true"
-
         android:theme="@style/AppTheme">
         <activity android:name="pirover.pinivea.chris.piroverapp.SplashActivity">
             <intent-filter>
@@ -24,11 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="pirover.pinivea.chris.piroverapp.NavigationDrawer" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name="pirover.pinivea.chris.piroverapp.NavigationDrawer"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="pirover.pinivea.chris.piroverapp.LoginActivity" />
         <activity android:name="pirover.pinivea.chris.piroverapp.RegisterActivity" />
-        <activity android:name="pirover.pinivea.chris.piroverapp.ManualActivity"/>
+        <activity android:name="pirover.pinivea.chris.piroverapp.ManualActivity" />
         <activity android:name="pirover.pinivea.chris.piroverapp.AutoActivity" />
+        <activity android:name="pirover.pinivea.chris.piroverapp.NewLogin" />
+        <activity android:name="pirover.pinivea.chris.piroverapp.NewRegister"></activity>
     </application>
 
 </manifest>

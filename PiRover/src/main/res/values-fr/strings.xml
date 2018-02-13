@@ -117,7 +117,7 @@
     <string name="bright_pref">" Luminosité pref"</string>
     <string name="bright_stringpref">haute</string>
     <string name="frag_saveToast">paramètres sauvegardés</string>
-    <string name="intent_putName">" prénom"</string>
+    <string name="intent_putName">" prénom1"</string>
     <string name="intent_putContent">contenu</string>
     <string name="intent_putUsername">Nom d\'utilisateur</string>
     <string name="intent_putSuccess">Succès</string>
