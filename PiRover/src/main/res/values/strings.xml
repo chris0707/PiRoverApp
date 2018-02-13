@@ -150,8 +150,7 @@
     <string name="frag_saveToast">Settings Saved</string>
 
 
-
-    <string name="intent_putName">name</string>
+    <string name="intent_putName">name1</string>
     <string name="intent_putContent">content</string>
     <string name="intent_putUsername">username</string>
     <string name="intent_putSuccess">success</string>

@@ -40,12 +40,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         chrisbutton.setOnClickListener(this);
         FloatingActionButton lawrencebutton = (FloatingActionButton)view.findViewById(R.id.fab2);
         lawrencebutton.setOnClickListener(this);
-        FloatingActionButton heakemebutton = (FloatingActionButton)view.findViewById(R.id.fab3);
-        heakemebutton.setOnClickListener(this);
+        FloatingActionButton patrickbutton = (FloatingActionButton)view.findViewById(R.id.fab3);
+        patrickbutton.setOnClickListener(this);
 
         retrieveIntent = getActivity().getIntent();
 
-        String name1 = retrieveIntent.getStringExtra("name");
+        String name1 = retrieveIntent.getStringExtra("name1");
         textName.setText(name1);
 
 
