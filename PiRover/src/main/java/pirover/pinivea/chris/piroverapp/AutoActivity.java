@@ -10,8 +10,10 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chris.piroverapp.R;
@@ -39,6 +41,8 @@ AutoActivity extends AppCompatActivity {
     Button toggleButton;
     Button connect, dc, startB, stopB;
     Boolean check = Boolean.FALSE;
+    TextView viewData;
+
 
 
 
@@ -53,11 +57,13 @@ AutoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto);
 
+
+
         connect = (Button)findViewById(R.id.buttonBlue);
         dc = (Button)findViewById(R.id.buttonDc);
         startB =(Button)findViewById(R.id.startButton);
         stopB = (Button)findViewById(R.id.stopButton);
-
+        viewData = findViewById(R.id.viewText);
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +115,9 @@ AutoActivity extends AppCompatActivity {
                 if(connected){
                     String start = getString(R.string.startAuto);
                     sendMsg(start);
+                    getMsg();
+
+
                 } else{
                     Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoMap), Toast.LENGTH_SHORT).show();
                 }
@@ -121,6 +130,7 @@ AutoActivity extends AppCompatActivity {
                 if(connected){
                     String stop = getString(R.string.stopAuto);
                     sendMsg(stop);
+
                 }else{
                     Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoStop), Toast.LENGTH_SHORT).show();
                 }
@@ -128,41 +138,6 @@ AutoActivity extends AppCompatActivity {
         });
 
 
-        /*toggleButton = (Button)findViewById(R.id.toggleButton);
-        toggleButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if (check == Boolean.FALSE) {
-                    if(connected) {
-                        int duration = Toast.LENGTH_SHORT;
-                        Context context = getApplicationContext();
-                        CharSequence text = "Automode: ON";
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
-
-                        sendMsg("automap");
-
-
-                        check = Boolean.TRUE;
-                    }
-                }
-
-                else {
-                    if(connected) {
-                        Context context = getApplicationContext();
-                        int duration = Toast.LENGTH_SHORT;
-                        CharSequence text = "Automode: OFF";
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
-
-                        sendMsg("stop");
-
-                        check = Boolean.FALSE;
-                    }
-
-                }
-            }
-        });*/
     }
 
 
@@ -215,8 +190,11 @@ AutoActivity extends AppCompatActivity {
             outputStream = blueSocket.getOutputStream();
             inputStream = blueSocket.getInputStream();
         }
+        //test
+
 
     }
+
 
     void sendMsg(String msg1) {
         try {
@@ -227,10 +205,27 @@ AutoActivity extends AppCompatActivity {
         }
     }
 
-    private void handleRunDown(String mes) {
+    void getMsg(){
+        byte[] buffer = new byte[1024];
+        int bytes;
+
+        try{
+            bytes = inputStream.read(buffer);
+            final String incomingMessage = new String(buffer, 0, bytes);
+            Log.d("AutoActivity", "InputStream: " + incomingMessage);
+
+            viewData.setText(incomingMessage);
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }
+
+    }
+
+  /*  private void handleRunDown(String mes) {
         if (!runThreadRunning)
             startRunThread(mes);
-    }
+    }*/
 
     private void startRunThread(final String mes) {
         Thread r = new Thread() {
@@ -266,8 +261,8 @@ AutoActivity extends AppCompatActivity {
         r.start();
     }
 
-    private void handleRunUp(){
-        runThreadStop = true;
-    }
+
+
+
 
 }
