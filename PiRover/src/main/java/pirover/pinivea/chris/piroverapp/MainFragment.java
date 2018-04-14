@@ -24,6 +24,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     Intent intent, intent2, retrieveIntent;
     Uri uri;
     TextView textName;
+    String userName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         retrieveIntent = getActivity().getIntent();
 
         String name1 = retrieveIntent.getStringExtra("name1");
+        userName = retrieveIntent.getStringExtra("username");
+
         textName.setText(name1);
 
 
@@ -78,11 +81,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
             case R.id.autocheck:
                 intent = new Intent(getActivity(), AutoActivity.class);
+                intent.putExtra("username2", userName);
                 startActivity(intent);
                 break;
 
             case R.id.manualcheck:
                 intent = new Intent(getActivity(), ManualActivity.class);
+
                 startActivity(intent);
                 break;
         }

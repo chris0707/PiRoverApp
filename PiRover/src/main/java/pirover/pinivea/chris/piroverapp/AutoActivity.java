@@ -4,6 +4,7 @@ package pirover.pinivea.chris.piroverapp;
 *Lawrence Puig N01033296
 *Heakeme Williams N01126779
  */
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -16,11 +17,25 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.chris.piroverapp.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -39,18 +54,21 @@ AutoActivity extends AppCompatActivity {
 
 
     Button toggleButton;
-    Button connect, dc, startB, stopB;
+    Button connect, dc, startB, saveData, stopB;
     Boolean check = Boolean.FALSE;
     TextView viewData;
-
-
-
 
     String a;
     String message="";
     boolean connected;
     boolean runThreadRunning = false;
     boolean runThreadStop = false;
+
+    private static final String URL = "http://thebarebarzz.xyz/UpdateCheck.php";
+    private RequestQueue requestQueue;
+    private StringRequest request;
+    String userName;
+    String currentDateTimeString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +80,8 @@ AutoActivity extends AppCompatActivity {
         connect = (Button)findViewById(R.id.buttonBlue);
         dc = (Button)findViewById(R.id.buttonDc);
         startB =(Button)findViewById(R.id.startButton);
-        stopB = (Button)findViewById(R.id.stopButton);
+       // stopB = (Button)findViewById(R.id.stopButton);
+        saveData = (Button) findViewById(R.id.saveDataButton);
         viewData = findViewById(R.id.viewText);
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +143,74 @@ AutoActivity extends AppCompatActivity {
             }
         });
 
-        stopB.setOnClickListener(new View.OnClickListener() {
+
+
+        requestQueue = Volley.newRequestQueue(this);
+        saveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String sendData = (String) viewData.getText() + currentDateTimeString;
+                final String userNameString;
+              /*  Intent intent = getIntent();
+                Bundle bundle = intent.getExtras();
+
+                if(bundle != null){
+                    userName = bundle.getString("username");
+                }*/
+                currentDateTimeString = " "+DateFormat.getDateTimeInstance().format(new Date());
+                userName = getIntent().getStringExtra("username2");
+
+                //test for update database
+                //viewData.setText(userName);
+                request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        try {
+                            assert jsonObject != null;
+                            if (jsonObject.names().get(0).equals("success")) {
+                                Toast.makeText(getApplicationContext(), "Update Success! " + jsonObject.getString("success"), Toast.LENGTH_SHORT).show();
+
+
+                            }else{
+                                Toast.makeText(getApplicationContext(), "Update Error! " + jsonObject.getString("error"), Toast.LENGTH_SHORT).show();
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError{
+                        HashMap<String,  String> hashMap = new HashMap<String, String>();
+                        hashMap.put("username", userName);
+                        hashMap.put("content", sendData);
+
+                        return hashMap;
+                    }
+                };
+                requestQueue.add(request);
+                
+
+            }
+        });
+
+
+
+    /*    stopB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(connected){
@@ -135,7 +221,7 @@ AutoActivity extends AppCompatActivity {
                     Toast.makeText(AutoActivity.this, getResources().getString(R.string.toast_autoStop), Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
 
     }
@@ -208,6 +294,7 @@ AutoActivity extends AppCompatActivity {
     void getMsg(){
         byte[] buffer = new byte[1024];
         int bytes;
+        final String obstacleText = getString(R.string.auto_dataTitle);
 
         try{
             bytes = inputStream.read(buffer);
