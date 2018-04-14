@@ -9,48 +9,46 @@
     tools:layout_editor_absoluteY="25dp">
 
 
-    <TableRow
-        android:id="@+id/tableRow1"
+    <Button
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="244dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/BrownShade"
+        android:text="@string/startButton"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewText" />
+
+    <Button
+        android:id="@+id/saveDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/BrownShade"
+        android:text="@string/auto_saveDataButton"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/stopButton"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:background="@color/BrownShade"
-            android:text="@string/stopButton"
-            tools:layout_editor_absoluteX="192dp"
-            tools:layout_editor_absoluteY="259dp" />
-
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@color/BrownShade"
-            android:paddingLeft="10dp"
-            android:text="@string/startButton"
-            tools:layout_editor_absoluteX="80dp"
-            tools:layout_editor_absoluteY="259dp" />
-    </TableRow>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2" />
 
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startButton">
 
         <Button
             android:id="@+id/buttonDc"
@@ -58,9 +56,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:background="@color/BrownShade"
-            android:text="@string/disconnect"
-            android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+            android:text="@string/disconnect"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
             tools:layout_constraintBaseline_creator="1"
@@ -96,15 +94,15 @@
 
     <TextView
         android:id="@+id/viewText"
-        android:layout_width="141dp"
-        android:layout_height="41dp"
+        android:layout_width="265dp"
+        android:layout_height="54dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:layout_marginTop="28dp"
+        android:text="@string/auto_dataTitle"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

@@ -72,7 +72,7 @@ public class NewLogin extends AppCompatActivity {
                                 Intent intent = new Intent(NewLogin.this, NavigationDrawer.class);
                                 intent.putExtra(getResources().getString(R.string.intent_putName), name);
                                 intent.putExtra(getResources().getString(R.string.intent_putUsername), username1);
-                                //intent.putExtra(getResources().getString(R.string.intent_putContent), content);
+
                                 startActivity(intent);
 
                                // startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));

@@ -73,6 +73,8 @@
     <!-- AutoControl -->
     <string name="startButton">AutoMap</string>
     <string name="stopButton">Stop</string>
+    <string name="auto_saveDataButton">SAVE DATA</string>
+    <string name="auto_dataTitle">Number of obstacles</string>
 
     <!-- Manual Activity -->
     <string name="PiRovers">PiRover</string>

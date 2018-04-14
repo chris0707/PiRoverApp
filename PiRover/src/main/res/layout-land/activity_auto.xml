@@ -8,43 +8,6 @@
     tools:context="pirover.pinivea.chris.piroverapp.AutoActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96">
-
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/BrownShade"
-            android:text="@string/startButton"
-            tools:layout_editor_absoluteX="196dp"
-            tools:layout_editor_absoluteY="199dp" />
-
-        <Button
-            android:id="@+id/stopButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@color/BrownShade"
-            android:text="@string/stopButton"
-            tools:layout_editor_absoluteX="308dp"
-            tools:layout_editor_absoluteY="199dp" />
-
-    </TableRow>
-
     <Button
         android:id="@+id/buttonDc"
         android:layout_width="wrap_content"
@@ -81,6 +44,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo1" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/BrownShade"
+        android:text="@string/startButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
